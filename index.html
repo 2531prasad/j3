@@ -153,26 +153,19 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 12px;
-            padding: 8px 16px;
-            transition: all 0.25s ease;
-        }
-        .marquee-logo-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(34, 197, 94, 0.35);
-            box-shadow: 0 4px 20px -4px rgba(34, 197, 94, 0.15);
+            background: transparent;
+            border: none;
+            padding: 0;
         }
         .marquee-logo-item img {
             display: block;
             object-fit: contain;
-            opacity: 0.85;
-            transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-        .marquee-logo-item:hover img {
+            filter: none !important;
             opacity: 1;
-            transform: scale(1.03);
+            transition: transform 0.2s ease;
+        }
+        .marquee-logo-card:hover img {
+            transform: scale(1.04);
         }
 
         /* Animation utilities */
@@ -455,90 +448,83 @@
         </div>
     </section>
 
-    <!-- Client & Partner Trust Marquee (Cohesive Deep Slate Glass Band) -->
-    <section class="py-12 sm:py-14 bg-dark-card/75 backdrop-blur-xl border-b border-dark-border overflow-hidden">
+        <!-- Client & Partner Trust Marquee (Warm Architectural Cream / Engineering Parchment) -->
+    <section class="py-12 sm:py-14 bg-gradient-to-b from-[#FAF7F2] to-[#F3EFE6] border-y border-[#E6DFD3] overflow-hidden" id="client-marquee">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                    <span class="text-[11px] font-mono uppercase tracking-widest text-brand-400 font-semibold block">Proven Enterprise Deployments</span>
-                    <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">Trusted by Tier-1 Enterprises & Hyperscalers</h3>
+                    <span class="text-xs font-mono uppercase tracking-widest text-[#15803D] font-bold block">Proven Enterprise Deployments</span>
+                    <h3 class="text-xl sm:text-2xl font-black text-[#182235] tracking-tight">Trusted by Tier-1 Enterprises & Hyperscalers</h3>
                 </div>
-                <span class="text-xs font-medium text-gray-400">Delivering mission-critical physical boundaries across India</span>
+                <span class="text-xs font-medium text-[#536377]">Delivering mission-critical physical boundaries across India</span>
             </div>
         </div>
         
         <!-- Desktop: Single Infinite Slow Forward Marquee -->
         <div class="hidden md:block relative w-full overflow-hidden">
-            <div class="marquee-track-forward gap-14 lg:gap-16 items-center">
-                <!-- Group 1 -->
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-
-                <!-- Duplicate for Loop -->
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+            <div class="marquee-track-forward gap-8 lg:gap-10 items-center">
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_04.webp" alt="Daifuku logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_05.webp" alt="Suroj Buildcon logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_06.webp" alt="URCC logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_10.webp" alt="Aurobindo Realty logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_11.webp" alt="Hiranandani logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_12.webp" alt="House of Hiranandani logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_04.webp" alt="Daifuku logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_05.webp" alt="Suroj Buildcon logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_06.webp" alt="URCC logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_10.webp" alt="Aurobindo Realty logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_11.webp" alt="Hiranandani logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
+                <div class="marquee-logo-item"><div class="marquee-logo-card px-4 py-2.5 sm:px-5 sm:py-3 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-14 sm:h-16 w-36 sm:w-44 hover:shadow-md hover:border-brand-500/40 transition-all"><img src="assets/images/client_logo_12.webp" alt="House of Hiranandani logo" class="max-h-8 sm:max-h-9 w-auto object-contain" loading="lazy" decoding="async" width="140" height="48"></div></div>
             </div>
         </div>
 
         <!-- Mobile / Tablet Phone View: 2 Counter-Scrolling Rows -->
-        <div class="md:hidden space-y-5">
+        <div class="md:hidden space-y-4">
             <!-- Row 1: Forward Direction (Logos 1 to 6) -->
             <div class="relative w-full overflow-hidden">
-                <div class="marquee-track-forward gap-8 items-center">
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    
-                    <!-- Loop Duplicate -->
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                <div class="marquee-track-forward gap-4 items-center">
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_04.webp" alt="Daifuku logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_05.webp" alt="Suroj Buildcon logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_06.webp" alt="URCC logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_04.webp" alt="Daifuku logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_05.webp" alt="Suroj Buildcon logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_06.webp" alt="URCC logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
                 </div>
             </div>
 
             <!-- Row 2: Reverse Direction (Logos 7 to 12) -->
             <div class="relative w-full overflow-hidden">
-                <div class="marquee-track-reverse gap-8 items-center">
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    
-                    <!-- Loop Duplicate -->
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                <div class="marquee-track-reverse gap-4 items-center">
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_10.webp" alt="Aurobindo Realty logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_11.webp" alt="Hiranandani logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_12.webp" alt="House of Hiranandani logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_10.webp" alt="Aurobindo Realty logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_11.webp" alt="Hiranandani logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
+                    <div class="marquee-logo-item"><div class="marquee-logo-card px-3.5 py-2 rounded-xl bg-white/90 shadow-sm border border-[#E8E2D5] flex items-center justify-center h-12 w-32 hover:shadow-md transition-all"><img src="assets/images/client_logo_12.webp" alt="House of Hiranandani logo" class="max-h-7 w-auto object-contain" loading="lazy" decoding="async" width="120" height="36"></div></div>
                 </div>
             </div>
         </div>
