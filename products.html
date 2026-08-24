@@ -5,38 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products & Technical Catalog | Jhanvi Enterprises</title>
     <meta name="description" content="Industrial perimeter fencing systems, 358 anti-climb, K-4 crash barriers, active electric fences, structural steel fabrication, precast jersey barriers and automated gates.">
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              400: '#4ade80',
-              500: '#22c55e',
-              600: '#16a34a',
-              700: '#15803d',
-            },
-            dark: {
-              base: '#0B0F17',
-              card: '#111726',
-              surface: '#182235',
-              border: '#233149',
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
-            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
-          }
-        }
-      }
-    }
-    </script>
+    <!-- Preconnect & Pruned Google Fonts (Inter + JetBrains Mono) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Production Compiled Minified Tailwind CSS -->
+    <link rel="stylesheet" href="css/style.min.css">
     <style>
         body {
             background-color: #0B0F17;
@@ -74,7 +48,7 @@
             <!-- Brand Logo -->
             <a href="index.html" class="flex items-center gap-3.5 group">
                 <div class="p-1.5 rounded-lg bg-white/5 border border-white/10 group-hover:border-brand-500/40 transition-colors">
-                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-8 sm:h-9 w-auto object-contain">
+                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-8 sm:h-9 w-auto object-contain" width="160" height="36" decoding="async">
                 </div>
                 <div class="flex flex-col">
                     <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
@@ -243,7 +217,7 @@ function renderCatalog() {
 
         card.innerHTML = `
             <div class="relative h-60 overflow-hidden bg-dark-surface">
-                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="400" height="240">
                 <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-brand-400">
                     ${p.badge || p.category}
                 </div>
