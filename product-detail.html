@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Engineering Specification | Jhanvi Enterprises</title>
+    <meta name="description" content="Detailed engineering specifications, material grades, applications, and RFQ for industrial perimeter security and structural steel products.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+            },
+            dark: {
+              base: '#0B0F17',
+              card: '#111726',
+              surface: '#182235',
+              border: '#233149',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
+        }
+        @media screen and (max-width: 768px) {
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+        .cyber-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-header {
+            background: rgba(11, 15, 23, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(17, 23, 38, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.35);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white">
+
+<!-- Fixed Top Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header">
+    <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3.5 group">
+                <div class="p-1.5 rounded-lg bg-white/5 border border-white/10 group-hover:border-brand-500/40 transition-colors">
+                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-8 sm:h-9 w-auto object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                        Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12">
+                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="products.html" class="text-sm font-medium text-brand-400">Products & Catalog</a>
+                <a href="index.html#sectors" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Sectors</a>
+                <a href="contact.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden md:flex items-center gap-3.5">
+                <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500/50 text-gray-200 hover:text-white transition-all shadow-sm">
+                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Brochure</span>
+                </a>
+                <a href="#rfq-section" class="glow-emerald inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-600 hover:bg-brand-500 text-white transition-all">
+                    Request Quote for Item
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-dark-border bg-dark-base/98 px-4 pt-3 pb-6 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Home</a>
+        <a href="products.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-brand-400 bg-dark-surface">Products & Catalog</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Contact Us</a>
+        <div class="pt-2">
+            <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-surface border border-dark-border text-gray-200 hover:text-white">
+                <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Download Technical Brochure
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="pt-20" id="main-content">
+    <!-- Breadcrumbs -->
+    <div class="border-b border-dark-border bg-dark-base/80 py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-mono text-gray-400">
+            <a href="index.html" class="hover:text-white">Home</a>
+            <span>/</span>
+            <a href="products.html" class="hover:text-white">Products</a>
+            <span>/</span>
+            <span class="text-brand-400 font-semibold" id="breadcrumb-product-name">Loading...</span>
+        </div>
+    </div>
+
+    <!-- Product Header Hero -->
+    <section class="py-12 bg-dark-card border-b border-dark-border cyber-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- Image Showcase -->
+                <div class="lg:col-span-6 space-y-4">
+                    <div class="relative rounded-2xl overflow-hidden border border-dark-border glass-card bg-dark-surface aspect-[4/3]">
+                        <img id="main-product-img" src="" alt="" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-dark-base/85 border border-white/10 text-brand-400" id="product-badge">
+                            Engineering Grade
+                        </div>
+                    </div>
+                    <!-- Thumbnails Gallery -->
+                    <div class="flex gap-3 overflow-x-auto pb-1" id="thumbnails-track">
+                        <!-- Javascript Populated -->
+                    </div>
+                </div>
+
+                <!-- Product Title & Details -->
+                <div class="lg:col-span-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold" id="product-category">Category</span>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mt-2" id="product-title">
+                        Product Name
+                    </h1>
+                    <p class="text-base text-gray-300 font-medium mt-3" id="product-tagline">
+                        Product Tagline
+                    </p>
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mt-4" id="product-overview">
+                        Product Overview
+                    </p>
+
+                    <!-- CTAs -->
+                    <div class="flex flex-wrap gap-4 mt-8">
+                        <a href="#rfq-section" class="glow-emerald inline-flex items-center justify-center px-6 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-brand-600 hover:bg-brand-500 text-white transition-all">
+                            Request Technical Quotation
+                        </a>
+                        <a id="direct-wa-btn" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-dark-surface hover:bg-dark-border border border-dark-border text-white transition-all">
+                            <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Direct WhatsApp Chat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Specs & Key Features -->
+    <section class="py-16 bg-dark-base border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Specifications Table -->
+                <div class="lg:col-span-7">
+                    <h2 class="text-xl font-bold text-white tracking-tight mb-6 flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-400"></span>
+                        Technical Specifications & Engineering Matrix
+                    </h2>
+                    <div class="rounded-xl border border-dark-border bg-dark-card overflow-hidden">
+                        <div class="divide-y divide-dark-border text-xs" id="specs-list">
+                            <!-- Javascript populated -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features & Applications -->
+                <div class="lg:col-span-5 space-y-8">
+                    <!-- Key Features -->
+                    <div>
+                        <h3 class="text-lg font-bold text-white tracking-tight mb-4">Engineered Highlights</h3>
+                        <ul class="space-y-3 text-xs text-gray-300" id="features-list">
+                            <!-- Javascript populated -->
+                        </ul>
+                    </div>
+
+                    <!-- Applications -->
+                    <div class="pt-6 border-t border-dark-border">
+                        <h3 class="text-lg font-bold text-white tracking-tight mb-4">Recommended Sectors</h3>
+                        <div class="flex flex-wrap gap-2" id="applications-list">
+                            <!-- Javascript populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead RFQ Section Specific to Product -->
+    <section class="py-16 bg-dark-card cyber-grid" id="rfq-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 sm:p-12 border border-brand-500/30">
+                <div class="text-center mb-8">
+                    <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Technical Inquiry</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mt-1" id="rfq-heading">Request Quotation</h2>
+                    <p class="text-xs text-gray-400 mt-2">Submit your site parameters for immediate engineering review and quotation.</p>
+                </div>
+
+                <form id="product-rfq-form" class="space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Full Name *</label>
+                            <input type="text" id="p-name" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Your Name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Company / Enterprise *</label>
+                            <input type="text" id="p-company" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Company Name">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Work Email *</label>
+                            <input type="email" id="p-email" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="email@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Phone / WhatsApp *</label>
+                            <input type="tel" id="p-phone" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="+91 XXXXX XXXXX">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Perimeter Length / Metric Quantity (Meters / Tonnage)</label>
+                        <input type="text" id="p-quantity" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="e.g. 500 Meters / 20 Tons">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Specific Requirements & Site Conditions</label>
+                        <textarea id="p-message" rows="3" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none resize-none" placeholder="Site location, desired height, drawing status..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <button type="button" onclick="submitProductWhatsApp()" class="flex-1 glow-emerald bg-brand-600 hover:bg-brand-500 text-white py-3 px-6 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            Send via WhatsApp
+                        </button>
+                        <button type="button" onclick="submitProductEmail()" class="flex-1 bg-dark-base hover:bg-dark-surface border border-dark-border hover:border-brand-500 text-white py-3 px-6 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            Send via Email
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark-card border-t border-dark-border py-8 text-center text-xs text-gray-400">
+    <div class="max-w-7xl mx-auto px-4">
+        <p>&copy; 2026 Jhanvi Enterprises. All rights reserved. | <a href="products.html" class="text-brand-400 hover:underline">All Products</a> | <a href="contact.html" class="text-brand-400 hover:underline">Contact</a></p>
+    </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script>
+// Mobile Drawer Toggle
+const mobileBtn = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Load Product Detail
+let currentProduct = null;
+
+function loadProduct() {
+    const params = new URLSearchParams(window.location.search);
+    const productId = params.get('id') || 'anti-climb-358-fence';
+    
+    const data = window.PRODUCTS_DATA;
+    if (!data || !data.product_categories) return;
+
+    let found = null;
+    for (const cat of data.product_categories) {
+        for (const p of cat.products) {
+            if (p.id === productId) {
+                found = p;
+                break;
+            }
+        }
+        if (found) break;
+    }
+
+    if (!found) {
+        found = data.product_categories[0].products[0];
+    }
+    currentProduct = found;
+
+    // Populate Page Elements
+    document.title = `${found.name} | Jhanvi Enterprises`;
+    document.getElementById('breadcrumb-product-name').textContent = found.name;
+    document.getElementById('product-title').textContent = found.name;
+    document.getElementById('product-tagline').textContent = found.tagline || '';
+    document.getElementById('product-overview').textContent = found.overview || '';
+    document.getElementById('product-category').textContent = found.category || '';
+    document.getElementById('product-badge').textContent = found.badge || found.category;
+    document.getElementById('main-product-img').src = found.image;
+    document.getElementById('main-product-img').alt = found.name;
+    document.getElementById('rfq-heading').textContent = `Request Quotation for ${found.name}`;
+
+    // Direct WhatsApp Button link
+    const waText = `Hi Jhanvi Enterprises, I would like to inquire about specifications and pricing for *${found.name}*.`;
+    document.getElementById('direct-wa-btn').href = `https://wa.me/918328014122?text=${encodeURIComponent(waText)}`;
+
+    // Thumbnails
+    const thumbsTrack = document.getElementById('thumbnails-track');
+    thumbsTrack.innerHTML = '';
+    const allImgs = [found.image, ...(found.secondary_images || [])];
+    
+    allImgs.forEach((imgSrc, idx) => {
+        const thumb = document.createElement('button');
+        thumb.className = `w-16 h-16 rounded-xl overflow-hidden border-2 flex-shrink-0 transition-all ${idx === 0 ? 'border-brand-500' : 'border-dark-border hover:border-gray-500'}`;
+        thumb.innerHTML = `<img src="${imgSrc}" class="w-full h-full object-cover">`;
+        thumb.addEventListener('click', () => {
+            document.getElementById('main-product-img').src = imgSrc;
+            thumbsTrack.querySelectorAll('button').forEach(b => b.classList.replace('border-brand-500', 'border-dark-border'));
+            thumb.classList.replace('border-dark-border', 'border-brand-500');
+        });
+        thumbsTrack.appendChild(thumb);
+    });
+
+    // Specifications List
+    const specsContainer = document.getElementById('specs-list');
+    specsContainer.innerHTML = '';
+    if (found.specifications) {
+        Object.entries(found.specifications).forEach(([k, v]) => {
+            const row = document.createElement('div');
+            row.className = 'grid grid-cols-1 sm:grid-cols-12 py-3 px-5 hover:bg-dark-surface/40 transition-colors gap-2';
+            const label = k.replace(/_/g, ' ').toUpperCase();
+            row.innerHTML = `
+                <div class="sm:col-span-4 font-mono text-gray-400 font-medium uppercase text-[11px]">${label}</div>
+                <div class="sm:col-span-8 text-gray-200 font-semibold">${v}</div>
+            `;
+            specsContainer.appendChild(row);
+        });
+    }
+
+    // Key Features
+    const featuresList = document.getElementById('features-list');
+    featuresList.innerHTML = '';
+    if (found.key_features) {
+        found.key_features.forEach(feat => {
+            const li = document.createElement('li');
+            li.className = 'flex items-start gap-2.5';
+            li.innerHTML = `<span class="text-brand-400 font-bold mt-0.5">✓</span> <span class="leading-relaxed">${feat}</span>`;
+            featuresList.appendChild(li);
+        });
+    }
+
+    // Applications
+    const appsList = document.getElementById('applications-list');
+    appsList.innerHTML = '';
+    if (found.applications) {
+        found.applications.forEach(app => {
+            const tag = document.createElement('span');
+            tag.className = 'px-3 py-1.5 rounded-lg text-xs font-mono bg-dark-surface border border-dark-border text-gray-300';
+            tag.textContent = app;
+            appsList.appendChild(tag);
+        });
+    }
+}
+
+function submitProductWhatsApp() {
+    if (!currentProduct) return;
+    const name = document.getElementById('p-name').value.trim();
+    const company = document.getElementById('p-company').value.trim();
+    const email = document.getElementById('p-email').value.trim();
+    const phone = document.getElementById('p-phone').value.trim();
+    const quantity = document.getElementById('p-quantity').value.trim();
+    const message = document.getElementById('p-message').value.trim();
+
+    if (!name || !company || !email || !phone) {
+        alert('Please fill in your name, company, email and phone.');
+        return;
+    }
+
+    const text = `*Product Quotation Request*\n` +
+                 `---------------------------\n` +
+                 `*Product:* ${currentProduct.name}\n` +
+                 `*Name:* ${name}\n` +
+                 `*Company:* ${company}\n` +
+                 `*Email:* ${email}\n` +
+                 `*Phone:* ${phone}\n` +
+                 `*Quantity/Scope:* ${quantity || 'Not specified'}\n` +
+                 `*Notes:* ${message || 'N/A'}\n` +
+                 `---------------------------\n` +
+                 `_From Jhanvi Enterprises Website_`;
+
+    window.open(`https://wa.me/918328014122?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function submitProductEmail() {
+    if (!currentProduct) return;
+    const name = document.getElementById('p-name').value.trim();
+    const company = document.getElementById('p-company').value.trim();
+    const email = document.getElementById('p-email').value.trim();
+    const phone = document.getElementById('p-phone').value.trim();
+    const quantity = document.getElementById('p-quantity').value.trim();
+    const message = document.getElementById('p-message').value.trim();
+
+    if (!name || !company || !email || !phone) {
+        alert('Please fill in your name, company, email and phone.');
+        return;
+    }
+
+    const subject = `Quotation Request: ${currentProduct.name} - ${company}`;
+    const body = `Dear Jhanvi Enterprises,\n\nWe would like to request technical specifications and quote for ${currentProduct.name}.\n\nDetails:\n- Name: ${name}\n- Company: ${company}\n- Email: ${email}\n- Phone: ${phone}\n- Quantity/Perimeter: ${quantity || 'TBD'}\n- Project Details: ${message || 'N/A'}\n\nBest regards,\n${name}`;
+
+    window.location.href = `mailto:info@jhanvienterprises.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+loadProduct();
+</script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Technical Catalog | Jhanvi Enterprises</title>
+    <meta name="description" content="Industrial perimeter fencing systems, 358 anti-climb, K-4 crash barriers, active electric fences, structural steel fabrication, precast jersey barriers and automated gates.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+            },
+            dark: {
+              base: '#0B0F17',
+              card: '#111726',
+              surface: '#182235',
+              border: '#233149',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+        }
+        .cyber-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-header {
+            background: rgba(11, 15, 23, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(17, 23, 38, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .filter-btn.is-active {
+            background-color: #16a34a;
+            color: #ffffff;
+            border-color: #16a34a;
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white">
+
+<!-- Fixed Top Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header">
+    <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3.5 group">
+                <div class="p-1.5 rounded-lg bg-white/5 border border-white/10 group-hover:border-brand-500/40 transition-colors">
+                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-8 sm:h-9 w-auto object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                        Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12">
+                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="products.html" class="text-sm font-medium text-brand-400">Products & Catalog</a>
+                <a href="index.html#sectors" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Sectors</a>
+                <a href="index.html#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Jhanvi</a>
+                <a href="contact.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden md:flex items-center gap-3.5">
+                <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500/50 text-gray-200 hover:text-white transition-all shadow-sm">
+                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Brochure</span>
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-600 hover:bg-brand-500 text-white transition-all shadow-lg">
+                    Request Quote
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-dark-border bg-dark-base/98 px-4 pt-3 pb-6 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Home</a>
+        <a href="products.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-brand-400 bg-dark-surface">Products & Catalog</a>
+        <a href="index.html#sectors" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Application Sectors</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Contact Us</a>
+        <div class="pt-2">
+            <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-surface border border-dark-border text-gray-200 hover:text-white">
+                <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Download Technical Brochure
+            </a>
+        </div>
+    </div>
+</header>
+
+<main class="pt-20">
+    <!-- Header Banner -->
+    <section class="py-14 bg-dark-card border-b border-dark-border cyber-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Technical Catalog & Engineering Specs</span>
+                <h1 class="text-3xl sm:text-5xl font-extrabold text-white tracking-tight mt-2">Engineered Perimeter Systems & Steel</h1>
+                <p class="text-sm text-gray-400 mt-3 leading-relaxed">
+                    Explore high-security apertures, crash-rated vehicle barriers, active electrification, automated cantilever gates, precast concrete Jersey barriers, and PEB structural steel fabrication.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Category Bar -->
+    <section class="sticky top-20 z-40 bg-dark-base/95 backdrop-blur-md border-b border-dark-border py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="category-filters">
+                <button class="filter-btn is-active whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="all">
+                    All Systems (8)
+                </button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="welded-mesh-fencing">
+                    Welded Mesh & Anti-Climb
+                </button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="crash-rated-defense">
+                    Crash Rated (HVM)
+                </button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="active-electronic-security">
+                    Active Electronic Security
+                </button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="gates-and-automation">
+                    Automated Gates & Motors
+                </button>
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="structural-steel-fabrication">
+                    Structural Steel & Precast
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid Section -->
+    <section class="py-16 bg-dark-base cyber-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Grid Container -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Javascript will inject products -->
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark-card border-t border-dark-border pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+            <p>&copy; 2026 Jhanvi Enterprises. All rights reserved.</p>
+            <p class="font-mono text-[11px]">Engineered in Hyderabad, India 🇮🇳</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/products-data.js"></script>
+<script>
+// Mobile toggle
+const mobileBtn = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+    hamburgerIcon.classList.toggle('hidden');
+    closeIcon.classList.toggle('hidden');
+});
+
+// Render Products
+let activeFilter = 'all';
+
+function renderCatalog() {
+    const data = window.PRODUCTS_DATA;
+    if (!data || !data.product_categories) return;
+
+    const grid = document.getElementById('product-grid');
+    grid.innerHTML = '';
+
+    let products = [];
+    data.product_categories.forEach(cat => {
+        cat.products.forEach(p => {
+            p._categoryId = cat.id;
+            p._categoryTitle = cat.title;
+            products.push(p);
+        });
+    });
+
+    const filtered = products.filter(p => activeFilter === 'all' || p._categoryId === activeFilter);
+
+    filtered.forEach(p => {
+        const card = document.createElement('a');
+        card.href = `product-detail.html?id=${p.id}`;
+        card.className = 'glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:border-brand-500/50 cursor-pointer block';
+        
+        // Build Specs HTML
+        let specsHtml = '';
+        if (p.specifications) {
+            const entries = Object.entries(p.specifications).slice(0, 2);
+            specsHtml = entries.map(([k, v]) => {
+                const label = k.replace(/_/g, ' ').toUpperCase();
+                return `<div class="bg-dark-base/70 border border-dark-border px-2.5 py-1.5 rounded-lg text-[10px] font-mono text-gray-300">
+                    <span class="text-gray-400 block">${label}</span>
+                    <span class="text-white font-semibold line-clamp-1">${v}</span>
+                </div>`;
+            }).join('');
+        }
+
+        card.innerHTML = `
+            <div class="relative h-60 overflow-hidden bg-dark-surface">
+                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-brand-400">
+                    ${p.badge || p.category}
+                </div>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">${p.name}</h3>
+                    <p class="text-xs text-gray-400 mt-2 leading-relaxed line-clamp-2">${p.tagline || p.overview}</p>
+                    
+                    <div class="grid grid-cols-2 gap-2 mt-4">
+                        ${specsHtml}
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                    <span class="text-[11px] font-mono text-gray-400">${p.category}</span>
+                    <span class="text-xs font-mono font-semibold text-brand-400 group-hover:text-brand-300 flex items-center gap-1.5">
+                        Technical Specs →
+                    </span>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
+    });
+}
+
+// Filter button clicks
+document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        activeFilter = btn.dataset.filter;
+        renderCatalog();
+    });
+});
+
+// URL Parameter Handling
+const params = new URLSearchParams(window.location.search);
+const catParam = params.get('category');
+if (catParam) {
+    activeFilter = catParam;
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.toggle('is-active', btn.dataset.filter === catParam);
+    });
+}
+
+renderCatalog();
+</script>
+</body>
+</html>

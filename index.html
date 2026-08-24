@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhanvi Enterprises | Industrial Perimeter Security & Structural Steel</title>
+    <meta name="description" content="India's trusted industrial-grade perimeter security fencing, crash-rated HVM barriers, 358 anti-climb, automated gates, precast jersey barriers & structural steel fabrication. Hyderabad, India.">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0fdf4',
+              100: '#dcfce7',
+              200: '#bbf7d0',
+              300: '#86efac',
+              400: '#4ade80',
+              500: '#22c55e',
+              600: '#16a34a',
+              700: '#15803d',
+              800: '#166534',
+              900: '#14532d',
+              950: '#052e16',
+            },
+            dark: {
+              base: '#0B0F17',
+              card: '#111726',
+              surface: '#182235',
+              border: '#233149',
+              subtle: '#1C273C'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+            mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        html, body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            max-width: 100vw;
+            width: 100%;
+        }
+        
+        /* Prevent iOS Auto-Zoom on form input focus by ensuring >= 16px font size on touch */
+        @media screen and (max-width: 768px) {
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Subtle Grid Pattern */
+        .cyber-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+
+        /* Glassmorphism */
+        .glass-header {
+            background: rgba(11, 15, 23, 0.82);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(17, 23, 38, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(34, 197, 94, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(34, 197, 94, 0.15);
+        }
+
+        /* Horizontal Carousel Custom Scrollbar hide */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior-x: contain;
+        }
+
+        #solutions-track {
+            scroll-behavior: auto;
+            touch-action: pan-x pan-y;
+            will-change: scroll-position;
+        }
+
+        /* Custom glow accents */
+        .glow-emerald {
+            box-shadow: 0 0 25px -5px rgba(34, 197, 94, 0.35);
+        }
+        .glow-emerald:hover {
+            box-shadow: 0 0 35px 0px rgba(34, 197, 94, 0.55);
+        }
+
+        /* Hero 3-Item Panel - Bright by default, snappy zoom, and desaturates sibling images on hover */
+        .hero-panel-group {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .hero-panel {
+            flex: 1 1 0%;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .hero-panel img {
+            transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+            transform: scale(1.001);
+            filter: brightness(1.02) saturate(1);
+            will-change: transform, filter;
+        }
+
+        /* Direct Hover on active panel */
+        .hero-panel:hover img {
+            transform: scale(1.12);
+            filter: brightness(1.08) saturate(1.1);
+        }
+
+        /* When the group is hovered, make other non-hovered sibling images lose 50% saturation */
+        .hero-panel-group:hover .hero-panel:not(:hover) img {
+            filter: saturate(0.5) brightness(0.88);
+        }
+
+        .hero-panel-group:hover .hero-panel:not(:hover) .overlay-gradient {
+            background: linear-gradient(to top, rgba(11, 15, 23, 0.85) 0%, rgba(11, 15, 23, 0.35) 60%, rgba(11, 15, 23, 0.15) 100%);
+        }
+
+        .overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(11, 15, 23, 0.75) 0%, rgba(11, 15, 23, 0.25) 50%, rgba(11, 15, 23, 0.05) 100%);
+            transition: background 0.4s ease;
+        }
+
+        /* Continuous Smooth Logo Marquee (Forward & Reverse) */
+        @keyframes marqueeForward {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeReverse {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .marquee-track-forward {
+            display: flex;
+            width: max-content;
+            animation: marqueeForward 38s linear infinite;
+            will-change: transform;
+        }
+        .marquee-track-reverse {
+            display: flex;
+            width: max-content;
+            animation: marqueeReverse 38s linear infinite;
+            will-change: transform;
+        }
+        .marquee-track-forward:hover,
+        .marquee-track-reverse:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee-logo-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .marquee-logo-item img {
+            display: block;
+            object-fit: contain;
+            filter: none !important;
+            opacity: 0.95;
+            transition: opacity 0.2s ease;
+        }
+        .marquee-logo-item img:hover {
+            opacity: 1;
+        }
+
+        /* Animation utilities */
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white">
+
+<!-- Fixed Top Navbar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header">
+    <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div class="flex items-center justify-between h-20">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center gap-3.5 group">
+                <div class="p-1.5 rounded-lg bg-white/5 border border-white/10 group-hover:border-brand-500/40 transition-colors">
+                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-8 sm:h-9 w-auto object-contain">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+                        Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
+                    </span>
+                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12">
+                <a href="index.html" class="text-sm font-medium text-brand-400">Home</a>
+                
+                <!-- Products Dropdown -->
+                <div class="relative group py-2">
+                    <a href="products.html" class="text-sm font-medium text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                        Products & Solutions
+                        <svg class="w-4 h-4 text-gray-400 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </a>
+                    <!-- Dropdown Menu -->
+                    <div class="absolute top-full left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                        <div class="glass-card rounded-xl p-2 shadow-2xl border border-dark-border bg-dark-card/95 backdrop-blur-xl">
+                            <a href="products.html?category=welded-mesh-fencing" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-dark-surface transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-brand-400"></span>
+                                358 Anti-Climb & BRC Weldmesh
+                            </a>
+                            <a href="products.html?category=crash-rated-defense" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-dark-surface transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span>
+                                K-4 Crash Rated Anti-Ram Fence
+                            </a>
+                            <a href="products.html?category=active-electronic-security" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-dark-surface transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-yellow-400"></span>
+                                Active High-Voltage Electric Fence
+                            </a>
+                            <a href="products.html?category=gates-and-automation" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-dark-surface transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-blue-400"></span>
+                                Cantilever & Sliding Gates / Motors
+                            </a>
+                            <div class="border-t border-dark-border my-1"></div>
+                            <a href="products.html?category=structural-steel-fabrication" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-brand-300 hover:text-white hover:bg-dark-surface transition-colors">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                Structural Steel Fabrication & Precast
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="#sectors" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Sectors</a>
+                <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Why Jhanvi</a>
+                <a href="contact.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Actions -->
+            <div class="hidden md:flex items-center gap-3.5">
+                <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500/50 text-gray-200 hover:text-white transition-all shadow-sm">
+                    <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <span>Brochure</span>
+                </a>
+                <a href="https://wa.me/918328014122" target="_blank" class="flex items-center gap-2 text-xs font-mono font-medium text-gray-300 hover:text-brand-400 px-3.5 py-2.5 rounded-lg bg-dark-card border border-dark-border transition-colors">
+                    <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    +91 8328014122
+                </a>
+                <a href="#rfq-section" class="glow-emerald inline-flex items-center justify-center px-4 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-600 hover:bg-brand-500 text-white transition-all">
+                    Request Quote
+                </a>
+            </div>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+                <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile dropdown drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-dark-border bg-dark-base/98 px-4 pt-3 pb-6 space-y-2">
+        <a href="index.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-brand-400 bg-dark-surface">Home</a>
+        <a href="products.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">All Products</a>
+        <a href="products.html?category=structural-steel-fabrication" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Structural Steel & Precast</a>
+        <a href="#sectors" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Application Sectors</a>
+        <a href="contact.html" class="block px-3 py-2 rounded-lg text-sm font-medium text-gray-300 hover:bg-dark-card">Contact Us</a>
+        <div class="pt-3 space-y-2">
+            <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Company_Profile.pdf" class="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider bg-dark-surface border border-dark-border text-gray-200 hover:text-white">
+                <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                Download Technical Brochure
+            </a>
+            <a href="#rfq-section" class="block w-full text-center py-3 rounded-lg text-sm font-semibold uppercase tracking-wider bg-brand-600 hover:bg-brand-500 text-white">
+                Request RFQ / Quote
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Betafence-Inspired 3-Item Hero Banner (Optimized for Desktop Flex & Mobile Touch Stack) -->
+    <section class="relative pt-20 h-screen min-h-[720px] max-h-[1080px] bg-dark-base overflow-hidden border-b border-dark-border">
+        <div class="hero-panel-group h-full flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-dark-border/60">
+            
+            <!-- Hero Pillar 1: Hostile Vehicle Mitigation / K-4 Crash Rated (Red Shade) -->
+            <a href="product-detail.html?id=k4-crash-rated-fence" class="hero-panel relative flex items-end h-1/3 md:h-full p-6 sm:p-8 lg:p-12 overflow-hidden group cursor-pointer">
+                <img src="assets/images/K-4 Crash Rated Anti-Ram Fence .webp" alt="K-4 Crash Rated Anti Ram Barrier" class="absolute inset-0 w-full h-full object-cover">
+                <div class="overlay-gradient"></div>
+                
+                <div class="relative z-10 w-full">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-red-500/20 text-red-400 border border-red-500/30">
+                            ASTM F2656 Crash Rated
+                        </span>
+                        <span class="text-[11px] font-mono text-gray-400 hidden sm:inline">Anti-Ram • HVM</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2 group-hover:text-red-400 transition-colors">
+                        K-4 Anti-Ram Barriers
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 max-w-md line-clamp-2 sm:line-clamp-none mb-4">
+                        Engineered vehicle impact mitigation halting 6,800 kg hostile vehicles at 48 km/h.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-mono font-medium text-red-400">
+                        <span>Explore Crash Rating</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Hero Pillar 2: High Security 358 Anti-Climb (Centered Perspective - Blue Shade) -->
+            <a href="product-detail.html?id=anti-climb-358-fence" class="hero-panel relative flex items-end h-1/3 md:h-full p-6 sm:p-8 lg:p-12 overflow-hidden group cursor-pointer">
+                <img src="assets/images/Anti-Climb High Security Mesh.webp" alt="358 Anti Climb High Security Perimeter" class="absolute inset-0 w-full h-full object-cover">
+                <div class="overlay-gradient"></div>
+                
+                <div class="relative z-10 w-full">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                            High Security Standard
+                        </span>
+                        <span class="text-[11px] font-mono text-gray-400 hidden sm:inline">Data Centers • Defence</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2 group-hover:text-blue-400 transition-colors">
+                        358 Anti-Climb Mesh
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 max-w-md line-clamp-2 sm:line-clamp-none mb-4">
+                        76.2×12.7mm dense aperture denying human toe-hold and bolt-cutter intrusion.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-mono font-medium text-blue-400">
+                        <span>Explore 358 Solution</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Hero Pillar 3: Structural Steel Fabrication & Precast Jersey Barriers (Green Shade) -->
+            <a href="product-detail.html?id=structural-steel-fabrication-erection" class="hero-panel relative flex items-end h-1/3 md:h-full p-6 sm:p-8 lg:p-12 overflow-hidden group cursor-pointer">
+                <img src="assets/images/Structural Steel Fabrication & Erection.webp" alt="Structural Steel Fabrication & Erection Yard" class="absolute inset-0 w-full h-full object-cover">
+                <div class="overlay-gradient"></div>
+                
+                <div class="relative z-10 w-full">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-widest bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                            Turnkey Infrastructure
+                        </span>
+                        <span class="text-[11px] font-mono text-gray-400 hidden sm:inline">Fabricated • Erected</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white tracking-tight mb-2 group-hover:text-emerald-400 transition-colors">
+                        Structural Steel & Precast
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 max-w-md line-clamp-2 sm:line-clamp-none mb-4">
+                        Industrial PEB fabrication, heavy structural erection & modular precast Jersey barriers.
+                    </p>
+                    <div class="flex items-center gap-2 text-xs font-mono font-medium text-emerald-400">
+                        <span>Explore Steel & Precast</span>
+                        <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- Client & Partner Trust Marquee (Light Clean Section with Free-Floating Enlarged Logos) -->
+    <section class="py-12 sm:py-14 bg-slate-100 border-b border-slate-300 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div>
+                    <span class="text-[11px] font-mono uppercase tracking-widest text-brand-700 font-bold block">Proven Enterprise Deployments</span>
+                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Trusted by Tier-1 Enterprises & Hyperscalers</h3>
+                </div>
+                <span class="text-xs font-medium text-slate-500">Delivering mission-critical physical boundaries across India</span>
+            </div>
+        </div>
+        
+        <!-- Desktop: Single Infinite Slow Forward Marquee -->
+        <div class="hidden md:block relative w-full overflow-hidden">
+            <div class="marquee-track-forward gap-14 lg:gap-16 items-center">
+                <!-- Group 1 -->
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+
+                <!-- Duplicate for Loop -->
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-12 lg:h-14 w-auto max-w-[170px]"></div>
+            </div>
+        </div>
+
+        <!-- Mobile / Tablet Phone View: 2 Counter-Scrolling Rows -->
+        <div class="md:hidden space-y-5">
+            <!-- Row 1: Forward Direction (Logos 1 to 6) -->
+            <div class="relative w-full overflow-hidden">
+                <div class="marquee-track-forward gap-8 items-center">
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-10 w-auto max-w-[130px]"></div>
+                    
+                    <!-- Loop Duplicate -->
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-10 w-auto max-w-[130px]"></div>
+                </div>
+            </div>
+
+            <!-- Row 2: Reverse Direction (Logos 7 to 12) -->
+            <div class="relative w-full overflow-hidden">
+                <div class="marquee-track-reverse gap-8 items-center">
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-10 w-auto max-w-[130px]"></div>
+                    
+                    <!-- Loop Duplicate -->
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-10 w-auto max-w-[130px]"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-10 w-auto max-w-[130px]"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore Our Solutions (Betafence-style sideways scrolling carousel) -->
+    <section class="py-20 bg-dark-base border-b border-dark-border" id="solutions-carousel">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Engineered Systems</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-1">Explore Our Solutions</h2>
+                    <p class="text-sm text-gray-400 mt-2 max-w-2xl">Browse our complete spectrum of active physical perimeter protection, welded mesh barriers, crash-rated gates, and structural steel works.</p>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="flex items-center gap-3">
+                    <button id="carousel-prev" class="p-3 rounded-xl bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500 text-gray-300 hover:text-white transition-colors" aria-label="Scroll left">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                    </button>
+                    <button id="carousel-next" class="p-3 rounded-xl bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500 text-gray-300 hover:text-white transition-colors" aria-label="Scroll right">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horizontal Scrollable Container -->
+        <div class="w-full overflow-x-auto no-scrollbar pl-4 sm:pl-6 lg:pl-[max(1rem,calc((100vw-80rem)/2+2rem))] pr-6 pb-6" id="solutions-track">
+            <div class="flex gap-6 w-max">
+                
+                <!-- Solution Card 1: 358 Anti-Climb -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/anti_climb_358_installed.webp" alt="358 Anti Climb High Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-emerald-400">
+                            High Security
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">358 Anti-Climb Mesh</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                76.2×12.7mm dense spacing prohibiting finger/toe hold and manual bolt-cutter attacks. Perfect for Data Centers and Substation perimeters.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">76.2 x 12.7 mm Aperture</span>
+                            <a href="product-detail.html?id=anti-climb-358-fence" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 2: BRC Bell Post / UNICO Prima -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/brc_bell_post_fence_installed.webp" alt="BRC Bell Post Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-brand-400">
+                            No-Fixture Modularity
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">BRC / UNICO Prima Fence</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                Aesthetic 200×50mm roll-top weldmesh with UNICO Prima post profile eliminating onsite welding and loose fixing hardware.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">Zero Onsite Welding</span>
+                            <a href="product-detail.html?id=brc-bell-post-fence" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 3: Structural Steel Fabrication & Erection -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/structural_steel_fabrication_1.webp" alt="Structural Steel Fabrication & Erection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-cyan-400">
+                            Fabricated & Erected
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">Structural Steel Works</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                End-to-end industrial structural steel: drawing coordination, heavy shop fabrication, and precision crane site erection for PEB sheds and platforms.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">Turnkey Erection</span>
+                            <a href="product-detail.html?id=structural-steel-fabrication-erection" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 4: Precast Concrete Jersey Barriers -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/precast_jersey_barriers_stack.webp" alt="Precast Concrete Jersey Barriers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-amber-400">
+                            Modular High Strength
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-amber-400 transition-colors">Precast Jersey Barriers</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                Factory-cast reinforced concrete safety barriers for rapid site deployment, traffic segregation, and integrated PPGI fence mounting.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">Rapid Crane Setup</span>
+                            <a href="product-detail.html?id=precast-jersey-barriers" class="text-xs font-mono font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 5: K-4 Crash Rated Anti-Ram Fence -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/k4_rated_high_security_fence.webp" alt="K-4 Crash Rated Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-red-400">
+                            Crash Rated HVM
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-red-400 transition-colors">K-4 Crash-Rated Barrier</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                ASTM F2656 vehicle impact perimeter defense engineered to stop hostile 15,000 lb vehicular attacks on defense and government centers.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">ASTM F2656 Certified</span>
+                            <a href="product-detail.html?id=k4-crash-rated-fence" class="text-xs font-mono font-semibold text-red-400 hover:text-red-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 6: Industrial Gates & Centurion Automation -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/sliding_automated_gate.webp" alt="Industrial Automated Sliding Gate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-blue-400">
+                            CENTURION Motors
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">Automated Gates & Motors</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                Trackless cantilever, sliding & swing gates powered by CENTURION D5-Evo 500kg intelligent drives with battery backup and photocell safety.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">D5-Evo Heavy Drive</span>
+                            <a href="product-detail.html?id=industrial-gates-and-automation" class="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Card 7: Active Electric Security Fence -->
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                    <div class="relative h-56 overflow-hidden">
+                        <img src="assets/images/electric_perimeter_fence.webp" alt="Active Electric Security Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-yellow-400">
+                            Active Pulse & Shock
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">Active Electric Fence</h3>
+                            <p class="text-xs text-gray-400 mt-2 leading-relaxed">
+                                Regulated non-lethal high-voltage deterrent with multi-zone continuous telemetry monitoring and audio-visual alarms.
+                            </p>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
+                            <span class="text-[11px] font-mono text-gray-400">Multi-Zone Alarms</span>
+                            <a href="product-detail.html?id=industrial-electric-fence" class="text-xs font-mono font-semibold text-yellow-400 hover:text-yellow-300 flex items-center gap-1">
+                                View Solution →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Sector Solutions (Data Centers, Corporates, Defence, Logistics) -->
+    <section class="py-20 bg-dark-card border-b border-dark-border" id="sectors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Specialized Applications</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">Purpose-Built for Critical Sectors</h2>
+                <p class="text-sm text-gray-400 mt-3">Tailored boundary protection and heavy structural engineering meeting stringent compliance, surveillance, and crash resistance benchmarks.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Sector 1: Data Centers & Hyperscalers -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group hover:border-emerald-500/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Data Centers & Hyperscale</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Zero-compromise multi-layered protection combining 358 Anti-Climb clear-sight mesh, active electric pulse deterrence, and crash-rated anti-ram vehicle gates.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono">
+                            <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> 76.2×12.7mm finger/toe-proof mesh</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> CCTV & thermal optical compatibility</li>
+                            <li class="flex items-center gap-2"><span class="text-brand-400">✓</span> Precast Jersey barrier segregation</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-dark-border">
+                        <a href="products.html?category=welded-mesh-fencing" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1.5">
+                            Explore Data Center Systems →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sector 2: Defence & Government Facilities -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group hover:border-red-500/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/30 flex items-center justify-center text-red-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Defence & Strategic Sites</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Hostile vehicle mitigation (HVM) engineered to ASTM F2656 standards, heavy concrete crash blocks, and multi-tiered physical delay boundaries.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono">
+                            <li class="flex items-center gap-2"><span class="text-red-400">✓</span> ASTM F2656 K-4 anti-ram rating</li>
+                            <li class="flex items-center gap-2"><span class="text-red-400">✓</span> Stops 15,000 lb vehicles at 30 mph</li>
+                            <li class="flex items-center gap-2"><span class="text-red-400">✓</span> Concertina & razor coil toppings</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-dark-border">
+                        <a href="products.html?category=crash-rated-defense" class="text-xs font-mono font-semibold text-red-400 hover:text-red-300 flex items-center gap-1.5">
+                            Explore Defence Solutions →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Sector 3: Corporate IT Parks & Industrial Facilities -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between group hover:border-cyan-500/50 transition-all duration-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Corporates & Industrial PEB</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed mb-6">
+                            Architectural BRC weldmesh with UNICO no-fixture posts, automated entrance cantilever gates, and complete structural steel fabrication and erection.
+                        </p>
+                        <ul class="space-y-2.5 text-xs text-gray-300 font-mono">
+                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Turnkey structural steel erection</li>
+                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Centurion D5-Evo automated gates</li>
+                            <li class="flex items-center gap-2"><span class="text-cyan-400">✓</span> Architectural RAL powder coatings</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-dark-border">
+                        <a href="products.html?category=structural-steel-fabrication" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5">
+                            Explore Corporate Systems →
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Core Pillars & Brochure Story -->
+    <section class="py-20 bg-dark-base border-b border-dark-border" id="about">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-5">
+                    <div class="relative rounded-2xl overflow-hidden border border-dark-border glass-card">
+                        <img src="assets/images/company_mission_about_fence.webp" alt="Jhanvi Enterprises Mission & Craftsmanship" class="w-full h-auto object-cover">
+                        <div class="p-6 bg-dark-card/90">
+                            <p class="text-sm font-medium italic text-gray-300">"Strive for progress, not perfection."</p>
+                            <p class="text-xs text-brand-400 font-mono mt-1 font-semibold">Jhanvi Enterprises Craftsmanship Philosophy</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">The Jhanvi Standard</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mt-2">
+                        Where Quality Meets Security, We Fence.
+                    </h2>
+                    <p class="text-sm text-gray-300 mt-4 leading-relaxed">
+                        India is a global powerhouse adopting cutting-edge security architecture. Choosing purpose-engineered welded mesh, anti-climb apertures, crash ratings, and precision structural steel for your periphery embankment is a benchmark operational decision.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-8">
+                        <div class="p-5 rounded-xl bg-dark-card border border-dark-border">
+                            <div class="text-brand-400 font-bold text-lg mb-1">01. Customer First</div>
+                            <p class="text-xs text-gray-400 leading-relaxed">We do everything possible to ensure complete satisfaction across consultation, supply, and execution.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-dark-card border border-dark-border">
+                            <div class="text-brand-400 font-bold text-lg mb-1">02. Reliable Delivery</div>
+                            <p class="text-xs text-gray-400 leading-relaxed">Strict adherence to committed project milestones and deployment schedules with zero compromise.</p>
+                        </div>
+                        <div class="p-5 rounded-xl bg-dark-card border border-dark-border">
+                            <div class="text-brand-400 font-bold text-lg mb-1">03. Uncompromising Quality</div>
+                            <p class="text-xs text-gray-400 leading-relaxed">Zero shortcuts. Industrial-grade steel, high-tensile welds, and multi-layer corrosion protection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specification Matrix Comparison -->
+    <section class="py-20 bg-dark-card border-b border-dark-border" id="tech-matrix">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">System Matrix</span>
+                <h2 class="text-3xl font-extrabold text-white tracking-tight mt-1">Technical Specification Overview</h2>
+                <p class="text-xs text-gray-400 mt-2">Compare primary engineering specifications across our perimeter lines.</p>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-dark-border bg-dark-base">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-dark-border bg-dark-surface/50 text-gray-300 font-mono uppercase tracking-wider">
+                            <th class="py-4 px-6">System Solution</th>
+                            <th class="py-4 px-6">Key Engineering Spec</th>
+                            <th class="py-4 px-6">Intrusion / Impact Rating</th>
+                            <th class="py-4 px-6">Fastening Profile</th>
+                            <th class="py-4 px-6">Primary Sector</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-dark-border text-gray-300">
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span> 358 Anti-Climb Mesh
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">76.2 × 12.7 mm Aperture</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Anti-Cut / Finger-Proof</span></td>
+                            <td class="py-4 px-6 text-gray-400">Full-length flat clamp bars</td>
+                            <td class="py-4 px-6 text-brand-300">Data Centers, Defence, Prisons</td>
+                        </tr>
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-brand-400"></span> BRC / Bell Post Fence
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">200 × 50 mm Mesh Pattern</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-brand-500/20 text-brand-400 text-[10px] font-mono">High Stiffness Roll-Top</span></td>
+                            <td class="py-4 px-6 text-gray-400">UNICO Prima (Zero Fixtures)</td>
+                            <td class="py-4 px-6 text-brand-300">Corporate Campuses, Townships</td>
+                        </tr>
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-red-400"></span> K-4 Crash Barrier Fence
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">Heavy Impact Stanchions</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 text-[10px] font-mono">ASTM F2656 Anti-Ram</span></td>
+                            <td class="py-4 px-6 text-gray-400">Continuous internal arrest cable</td>
+                            <td class="py-4 px-6 text-red-300">Embassies, Strategic Sites</td>
+                        </tr>
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400"></span> Structural Steel Fabrication
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">PEB Columns, Beams & Platforms</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-400 text-[10px] font-mono">Heavy Industrial Grade</span></td>
+                            <td class="py-4 px-6 text-gray-400">Engineered Bolted & Welded</td>
+                            <td class="py-4 px-6 text-cyan-300">Warehouses, Industrial Plants</td>
+                        </tr>
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-400"></span> Precast Jersey Barriers
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">High-Strength M-Grade Concrete</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono">Crash Deflection</span></td>
+                            <td class="py-4 px-6 text-gray-400">Interlocking Modular Blocks</td>
+                            <td class="py-4 px-6 text-amber-300">Highways, Plant Demarcation</td>
+                        </tr>
+                        <tr class="hover:bg-dark-card/50 transition-colors">
+                            <td class="py-4 px-6 font-semibold text-white flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Active Electric Security
+                            </td>
+                            <td class="py-4 px-6 font-mono text-gray-400">Multi-Strand Regulated Pulse</td>
+                            <td class="py-4 px-6"><span class="px-2 py-0.5 rounded bg-yellow-500/20 text-yellow-400 text-[10px] font-mono">Non-Lethal High Voltage</span></td>
+                            <td class="py-4 px-6 text-gray-400">Insulated tension posts & telemetry</td>
+                            <td class="py-4 px-6 text-yellow-300">Substations, High-Security Estates</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Generation RFQ Form (Tailored for Data Centers, Defence, Corporates) -->
+    <section class="py-20 bg-dark-base cyber-grid" id="rfq-section">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 sm:p-12 border border-brand-500/30">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Request Technical Proposal & Quotation</h2>
+                    <p class="text-xs sm:text-sm text-gray-400 mt-2">Connect directly with our engineering team for site drawings, BOQ assessment, and pricing.</p>
+                </div>
+
+                <form id="rfq-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" id="rfq-name" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Ramesh Kumar">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Company / Enterprise *</label>
+                            <input type="text" id="rfq-company" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Tata Projects / STT Data Centers">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Work Email *</label>
+                            <input type="email" id="rfq-email" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="ramesh@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Phone / WhatsApp *</label>
+                            <input type="tel" id="rfq-phone" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="+91 98765 43210">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Product / Solution Required</label>
+                            <select id="rfq-product" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors">
+                                <option value="">Select requirement...</option>
+                                <option value="358 Anti-Climb High Security Mesh">358 Anti-Climb High Security Mesh</option>
+                                <option value="BRC / Bell Post Weldmesh">BRC / Bell Post Weldmesh (UNICO Prima)</option>
+                                <option value="K-4 Crash Rated Anti-Ram Fence">K-4 Crash Rated Anti-Ram Fence</option>
+                                <option value="Active Electric Security Fence">Active Electric Security Fence</option>
+                                <option value="Structural Steel Fabrication & Erection">Structural Steel Fabrication & Erection</option>
+                                <option value="Precast Jersey Barriers">Precast Jersey Barriers</option>
+                                <option value="PPGI Sheet Boundary Fencing">PPGI Sheet Boundary Fencing</option>
+                                <option value="Industrial Automated Gates & Motors">Industrial Automated Gates & Motors</option>
+                                <option value="Turnkey Multi-Product BOQ">Turnkey Multi-Product BOQ Consultation</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Approx. Perimeter / Scope (Meters / Tonnage)</label>
+                            <input type="text" id="rfq-scope" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. 750 Running Meters / 50 MT Steel">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Project Notes & Site Requirements</label>
+                        <textarea id="rfq-message" rows="3" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors resize-none" placeholder="Provide details such as project location, fence height, timeline, or drawing attachments..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                        <button type="button" onclick="submitWhatsAppRFQ()" class="flex-1 glow-emerald bg-brand-600 hover:bg-brand-500 text-white py-3.5 px-6 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            Instant WhatsApp RFQ
+                        </button>
+                        <button type="button" onclick="submitEmailRFQ()" class="flex-1 bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500 text-white py-3.5 px-6 rounded-xl font-semibold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all">
+                            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                            Send Official Email Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-dark-card border-t border-dark-border pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div>
+                <a href="index.html" class="flex items-center gap-3 mb-4">
+                    <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-9 w-auto">
+                    <span class="text-lg font-bold text-white">Jhanvi <span class="text-brand-400">Enterprises</span></span>
+                </a>
+                <p class="text-xs text-gray-400 italic mb-4">"Where Quality Meets Security, We Fence."</p>
+                <p class="text-xs text-gray-400 leading-relaxed">
+                    Premier manufacturer, fabricator & installer of high-security fencing, hostile vehicle mitigation barriers, precast concrete Jersey barriers, and structural steel structures across India.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-wider text-white font-bold mb-4">Solutions & Products</h4>
+                <ul class="space-y-2.5 text-xs text-gray-400">
+                    <li><a href="products.html?category=welded-mesh-fencing" class="hover:text-brand-400 transition-colors">358 Anti-Climb High Security</a></li>
+                    <li><a href="products.html?category=welded-mesh-fencing" class="hover:text-brand-400 transition-colors">BRC & UNICO Prima Weldmesh</a></li>
+                    <li><a href="products.html?category=crash-rated-defense" class="hover:text-brand-400 transition-colors">ASTM K-4 Crash Rated Anti-Ram</a></li>
+                    <li><a href="products.html?category=structural-steel-fabrication" class="hover:text-brand-400 transition-colors">Structural Steel Fabrication & Erection</a></li>
+                    <li><a href="products.html?category=structural-steel-fabrication" class="hover:text-brand-400 transition-colors">Precast Concrete Jersey Barriers</a></li>
+                    <li><a href="products.html?category=gates-and-automation" class="hover:text-brand-400 transition-colors">Cantilever & Sliding Automated Gates</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-wider text-white font-bold mb-4">Key Application Sectors</h4>
+                <ul class="space-y-2.5 text-xs text-gray-400">
+                    <li><a href="#sectors" class="hover:text-brand-400 transition-colors">Hyperscale Data Centers</a></li>
+                    <li><a href="#sectors" class="hover:text-brand-400 transition-colors">Defence & Strategic Infrastructure</a></li>
+                    <li><a href="#sectors" class="hover:text-brand-400 transition-colors">Corporate Campuses & IT Parks</a></li>
+                    <li><a href="#sectors" class="hover:text-brand-400 transition-colors">Warehousing & Logistics Hubs</a></li>
+                    <li><a href="#sectors" class="hover:text-brand-400 transition-colors">Highways & Infrastructure Demarcation</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-xs font-mono uppercase tracking-wider text-white font-bold mb-4">Hyderabad Head Office</h4>
+                <div class="space-y-3 text-xs text-gray-400">
+                    <p class="flex items-start gap-2">
+                        <svg class="w-4 h-4 text-brand-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        Plot No 942, Asbestos Colony, Kukatpally, Ranga Reddy, Hyderabad, Telangana - 500072
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-brand-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        <a href="https://wa.me/918328014122" target="_blank" class="hover:text-brand-400 transition-colors">+91-8328014122</a>
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <a href="mailto:info@jhanvienterprises.co.in" class="hover:text-brand-400 transition-colors">info@jhanvienterprises.co.in</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-8 border-t border-dark-border flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+            <p>&copy; 2026 Jhanvi Enterprises. All rights reserved.</p>
+            <p class="font-mono text-[11px]">Industrial B2B Portfolio • Engineered in Hyderabad, India 🇮🇳</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating WhatsApp Action -->
+<a href="https://wa.me/918328014122?text=Hello%20Jhanvi%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20perimeter%20security%20and%20structural%20steel%20solutions." target="_blank" class="fixed bottom-6 right-6 z-40 p-3.5 rounded-full bg-brand-600 hover:bg-brand-500 text-white shadow-2xl glow-emerald flex items-center justify-center transition-all duration-300 hover:scale-110" aria-label="Direct WhatsApp Contact">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Interactive Scripts -->
+<script>
+// Mobile Drawer Toggle
+const mobileBtn = document.getElementById('mobile-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+const hamburgerIcon = document.getElementById('hamburger-icon');
+const closeIcon = document.getElementById('close-icon');
+
+mobileBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        hamburgerIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+    } else {
+        mobileMenu.classList.add('hidden');
+        hamburgerIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+    }
+});
+
+// Solutions Carousel Sideways Scrolling & Auto-Scroll
+const track = document.getElementById('solutions-track');
+const prevBtn = document.getElementById('carousel-prev');
+const nextBtn = document.getElementById('carousel-next');
+
+if (track && prevBtn && nextBtn) {
+    const scrollStep = 380;
+    const autoScrollSpeed = 0.75; // px per frame (normalized at 60fps)
+    let virtualScrollLeft = track.scrollLeft;
+    let isUserInteracting = false;
+    let interactionTimeout = null;
+    let lastTime = performance.now();
+    let isTouching = false;
+
+    function pauseAutoScroll(durationMs = 3500) {
+        isUserInteracting = true;
+        if (interactionTimeout) clearTimeout(interactionTimeout);
+        interactionTimeout = setTimeout(() => {
+            if (!isTouching) {
+                isUserInteracting = false;
+                virtualScrollLeft = track.scrollLeft;
+            }
+        }, durationMs);
+    }
+
+    prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        pauseAutoScroll(5000);
+        track.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        pauseAutoScroll(5000);
+        track.scrollBy({ left: scrollStep, behavior: 'smooth' });
+    });
+
+    // Mouse hover events (Desktop)
+    track.addEventListener('mouseenter', () => {
+        isUserInteracting = true;
+    });
+    track.addEventListener('mouseleave', () => {
+        if (!isTouching) {
+            isUserInteracting = false;
+            virtualScrollLeft = track.scrollLeft;
+        }
+    });
+
+    // Touch events (Mobile Phone / Tablet)
+    track.addEventListener('touchstart', () => {
+        isTouching = true;
+        isUserInteracting = true;
+        if (interactionTimeout) clearTimeout(interactionTimeout);
+    }, { passive: true });
+
+    track.addEventListener('touchmove', () => {
+        virtualScrollLeft = track.scrollLeft;
+    }, { passive: true });
+
+    track.addEventListener('touchend', () => {
+        isTouching = false;
+        virtualScrollLeft = track.scrollLeft;
+        // Allow native inertia/momentum scrolling to finish smoothly before resuming auto-scroll
+        pauseAutoScroll(3000);
+    }, { passive: true });
+
+    track.addEventListener('touchcancel', () => {
+        isTouching = false;
+        virtualScrollLeft = track.scrollLeft;
+        pauseAutoScroll(2000);
+    }, { passive: true });
+
+    // Track user manual wheel or scroll momentum
+    track.addEventListener('scroll', () => {
+        if (isUserInteracting || isTouching) {
+            virtualScrollLeft = track.scrollLeft;
+        }
+    }, { passive: true });
+
+    // Animation Loop with delta-time calculation and integer subpixel accumulation
+    function stepSolutionsAutoScroll(currentTime) {
+        const delta = Math.min((currentTime - lastTime) / 16.67, 2.5);
+        lastTime = currentTime;
+
+        if (!isUserInteracting && !isTouching && track) {
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            if (maxScroll > 0) {
+                virtualScrollLeft += autoScrollSpeed * delta;
+                if (virtualScrollLeft >= maxScroll - 2) {
+                    virtualScrollLeft = 0;
+                }
+                track.scrollLeft = Math.round(virtualScrollLeft);
+            }
+        }
+        requestAnimationFrame(stepSolutionsAutoScroll);
+    }
+    requestAnimationFrame(stepSolutionsAutoScroll);
+}
+
+// RFQ Lead Submit Handlers
+function submitWhatsAppRFQ() {
+    const name = document.getElementById('rfq-name').value.trim();
+    const company = document.getElementById('rfq-company').value.trim();
+    const email = document.getElementById('rfq-email').value.trim();
+    const phone = document.getElementById('rfq-phone').value.trim();
+    const product = document.getElementById('rfq-product').value;
+    const scope = document.getElementById('rfq-scope').value.trim();
+    const message = document.getElementById('rfq-message').value.trim();
+
+    if (!name || !company || !email || !phone) {
+        alert('Please fill in the required contact fields (*).');
+        return;
+    }
+
+    const text = `*New RFQ - Jhanvi Enterprises Website*\n` +
+                 `--------------------------------------\n` +
+                 `*Name:* ${name}\n` +
+                 `*Company:* ${company}\n` +
+                 `*Email:* ${email}\n` +
+                 `*Phone:* ${phone}\n` +
+                 `*Product Line:* ${product || 'General Consultation'}\n` +
+                 `*Estimated Scope:* ${scope || 'To be evaluated'}\n` +
+                 `*Project Notes:* ${message || 'N/A'}\n` +
+                 `--------------------------------------\n` +
+                 `_Lead Source: Jhanvi B2B Web Portal_`;
+
+    window.open(`https://wa.me/918328014122?text=${encodeURIComponent(text)}`, '_blank');
+}
+
+function submitEmailRFQ() {
+    const name = document.getElementById('rfq-name').value.trim();
+    const company = document.getElementById('rfq-company').value.trim();
+    const email = document.getElementById('rfq-email').value.trim();
+    const phone = document.getElementById('rfq-phone').value.trim();
+    const product = document.getElementById('rfq-product').value;
+    const scope = document.getElementById('rfq-scope').value.trim();
+    const message = document.getElementById('rfq-message').value.trim();
+
+    if (!name || !company || !email || !phone) {
+        alert('Please fill in the required contact fields (*).');
+        return;
+    }
+
+    const subject = `RFQ Inquiry: ${company} - ${product || 'Perimeter & Steel Solutions'}`;
+    const body = `Dear Jhanvi Enterprises Engineering Team,\n\n` +
+                 `We would like to request technical specifications and quotation for our project.\n\n` +
+                 `Client Details:\n` +
+                 `- Full Name: ${name}\n` +
+                 `- Company / Enterprise: ${company}\n` +
+                 `- Work Email: ${email}\n` +
+                 `- Contact Phone: ${phone}\n\n` +
+                 `Project Requirements:\n` +
+                 `- Solution Required: ${product || 'General Inquiry'}\n` +
+                 `- Approx. Scope / Quantity: ${scope || 'Not specified'}\n` +
+                 `- Requirements / Site Notes: ${message || 'N/A'}\n\n` +
+                 `Please revert with technical BOQ and lead time.\n\n` +
+                 `Best regards,\n${name}\n${company}`;
+
+    window.location.href = `mailto:info@jhanvienterprises.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+</script>
+</body>
+</html>
