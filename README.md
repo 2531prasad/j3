@@ -25,11 +25,11 @@ Designed with an industrial dark slate engineering aesthetic inspired by global 
 website/
 ├── assets/
 │   ├── docs/
-│   │   └── Where Quality Meets Security, We Fence. Jhanvi Enterprises (Profile)-1.pdf  # 19-Page Company Profile TDS
+│   │   └── jhanvi-enterprises-technical-spec-2026.pdf  # 19-Page Company Profile TDS
 │   └── images/
-│       ├── Anti-Climb High Security Mesh.webp            # Hero Pillar 2 (Square focus)
-│       ├── K-4 Crash Rated Anti-Ram Fence .webp          # Hero Pillar 1 (Square focus)
-│       ├── Structural Steel Fabrication & Erection.webp  # Hero Pillar 3 (Square focus)
+│       ├── anti-climb-high-security-mesh.webp            # Hero Pillar 2 (Square focus)
+│       ├── k4-crash-rated-anti-ram-fence.webp          # Hero Pillar 1 (Square focus)
+│       ├── structural-steel-fabrication-erection-hero.webp  # Hero Pillar 3 (Square focus)
 │       ├── anti_climb_358_installed.webp                 # 358 Anti-Climb site installation
 │       ├── anti_climb_panel_detail_1.webp                # 358 Finger/toe proof aperture macro
 │       ├── anti_climb_panel_detail_2.webp                # 358 Bolt-cutter delay test
