@@ -46,6 +46,11 @@
 </head>
 <body class="selection:bg-brand-500 selection:text-white">
 
+<!-- Skip to Main Content Link (WCAG 2.4.1) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:shadow-2xl focus:font-semibold focus:text-xs focus:uppercase focus:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to Main Content
+</a>
+
 <!-- Header -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
     <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
@@ -58,7 +63,7 @@
                     <span class="text-base sm:text-lg font-bold text-white">
                         Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
                     </span>
-                    <span class="text-[10px] text-gray-400 font-mono uppercase hidden sm:block">Perimeter Security & Steel</span>
+                    <span class="text-xs text-gray-400 font-mono uppercase hidden sm:block">Perimeter Security & Steel</span>
                 </div>
             </a>
             <nav class="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12">
@@ -76,7 +81,7 @@
                     Direct WhatsApp
                 </a>
             </div>
-            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border">
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
         </div>
@@ -94,7 +99,7 @@
     </div>
 </header>
 
-<main class="pt-20">
+<main id="main-content" class="pt-20">
     <section class="py-14 bg-dark-card border-b border-dark-border cyber-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <span class="text-xs font-mono uppercase tracking-widest text-brand-400 font-semibold">Direct Communication Channel</span>
@@ -161,25 +166,25 @@
                         <form id="contact-form" class="space-y-5">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Full Name *</label>
-                                    <input type="text" id="c-name" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Your name">
+                                    <label for="c-name" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Full Name <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                                    <input type="text" id="c-name" name="name" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Your name">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Company *</label>
-                                    <input type="text" id="c-company" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Company / Enterprise">
+                                    <label for="c-company" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Company <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                                    <input type="text" id="c-company" name="company" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Company / Enterprise">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Work Email *</label>
-                                    <input type="email" id="c-email" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="email@company.com">
+                                    <label for="c-email" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Work Email <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                                    <input type="email" id="c-email" name="email" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="email@company.com">
                                 </div>
                                 <div>
-                                    <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Phone *</label>
-                                    <input type="tel" id="c-phone" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="+91 XXXXX XXXXX">
+                                    <label for="c-phone" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Phone <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                                    <input type="tel" id="c-phone" name="phone" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="+91 XXXXX XXXXX">
                                 </div>
                             </div>
                             <div>
-                                <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Primary Interest</label>
-                                <select id="c-interest" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white focus:border-brand-500 outline-none">
+                                <label for="c-interest" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Primary Interest</label>
+                                <select id="c-interest" name="interest" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white focus:border-brand-500 outline-none">
                                     <option value="Perimeter Security Fencing">Perimeter Security Fencing (358 / BRC)</option>
                                     <option value="Hostile Vehicle Mitigation (K-4)">Hostile Vehicle Mitigation (K-4 Anti-Ram)</option>
                                     <option value="Structural Steel Fabrication & Erection">Structural Steel Fabrication & Erection</option>
@@ -189,8 +194,8 @@
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Message / Project Scope</label>
-                                <textarea id="c-message" rows="4" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none resize-none" placeholder="Describe site requirements, dimensions, or timeline..."></textarea>
+                                <label for="c-message" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Message / Project Scope</label>
+                                <textarea id="c-message" name="message" rows="4" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none resize-none" placeholder="Describe site requirements, dimensions, or timeline..."></textarea>
                             </div>
 
                             <div class="flex flex-col sm:flex-row gap-4 pt-2">
@@ -219,7 +224,9 @@
 const mobileBtn = document.getElementById('mobile-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 mobileBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
     mobileMenu.classList.toggle('hidden');
+    mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
 });
 
 function sendContactWhatsApp() {

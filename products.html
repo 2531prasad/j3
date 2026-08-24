@@ -41,6 +41,11 @@
 </head>
 <body class="selection:bg-brand-500 selection:text-white">
 
+<!-- Skip to Main Content Link (WCAG 2.4.1) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:shadow-2xl focus:font-semibold focus:text-xs focus:uppercase focus:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to Main Content
+</a>
+
 <!-- Fixed Top Navbar -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
     <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
@@ -54,7 +59,7 @@
                     <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
                         Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
                     </span>
-                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                    <span class="text-xs text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
                 </div>
             </a>
 
@@ -79,7 +84,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
                 <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -101,7 +106,7 @@
     </div>
 </header>
 
-<main class="pt-20">
+<main id="main-content" class="pt-20">
     <!-- Header Banner -->
     <section class="py-14 bg-dark-card border-b border-dark-border cyber-grid">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,26 +120,35 @@
         </div>
     </section>
 
-    <!-- Filter Category Bar -->
+    <!-- Search & Filter Category Bar -->
     <section class="sticky top-20 z-40 bg-dark-base/95 backdrop-blur-md border-b border-dark-border py-4">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div class="relative flex-1 max-w-md">
+                    <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    <input type="text" id="catalog-search" placeholder="Search systems, 358 mesh, crash rating, PEB steel..." class="w-full bg-dark-card border border-dark-border rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-gray-500 focus:border-brand-500 focus:outline-none transition-colors" aria-label="Search product catalog">
+                </div>
+                <div class="text-xs font-mono text-gray-400 flex items-center gap-1.5" id="catalog-counter">
+                    Showing <span class="text-brand-400 font-bold" id="counter-current">8</span> of <span class="text-white font-bold" id="counter-total">8</span> Systems
+                </div>
+            </div>
             <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar" id="category-filters">
-                <button class="filter-btn is-active whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="all">
+                <button class="filter-btn is-active whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="all" aria-pressed="true">
                     All Systems (8)
                 </button>
-                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="welded-mesh-fencing">
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="welded-mesh-fencing" aria-pressed="false">
                     Welded Mesh & Anti-Climb
                 </button>
-                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="crash-rated-defense">
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="crash-rated-defense" aria-pressed="false">
                     Crash Rated (HVM)
                 </button>
-                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="active-electronic-security">
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="active-electronic-security" aria-pressed="false">
                     Active Electronic Security
                 </button>
-                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="gates-and-automation">
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="gates-and-automation" aria-pressed="false">
                     Automated Gates & Motors
                 </button>
-                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="structural-steel-fabrication">
+                <button class="filter-btn whitespace-nowrap px-4 py-2 rounded-xl border border-dark-border text-xs font-mono font-medium text-gray-300 hover:text-white transition-colors" data-filter="structural-steel-fabrication" aria-pressed="false">
                     Structural Steel & Precast
                 </button>
             </div>
@@ -171,9 +185,11 @@ const hamburgerIcon = document.getElementById('hamburger-icon');
 const closeIcon = document.getElementById('close-icon');
 
 mobileBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
     mobileMenu.classList.toggle('hidden');
     hamburgerIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
+    mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
 });
 
 // Render Products
@@ -247,8 +263,12 @@ function renderCatalog() {
 // Filter button clicks
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+        document.querySelectorAll('.filter-btn').forEach(b => {
+            b.classList.remove('is-active');
+            b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
         activeFilter = btn.dataset.filter;
         renderCatalog();
     });
@@ -260,7 +280,9 @@ const catParam = params.get('category');
 if (catParam) {
     activeFilter = catParam;
     document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.toggle('is-active', btn.dataset.filter === catParam);
+        const isTarget = btn.dataset.filter === catParam;
+        btn.classList.toggle('is-active', isTarget);
+        btn.setAttribute('aria-pressed', isTarget ? 'true' : 'false');
     });
 }
 

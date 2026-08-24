@@ -153,16 +153,26 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 8px 16px;
+            transition: all 0.25s ease;
+        }
+        .marquee-logo-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(34, 197, 94, 0.35);
+            box-shadow: 0 4px 20px -4px rgba(34, 197, 94, 0.15);
         }
         .marquee-logo-item img {
             display: block;
             object-fit: contain;
-            filter: none !important;
-            opacity: 0.95;
-            transition: opacity 0.2s ease;
+            opacity: 0.85;
+            transition: opacity 0.2s ease, transform 0.2s ease;
         }
-        .marquee-logo-item img:hover {
+        .marquee-logo-item:hover img {
             opacity: 1;
+            transform: scale(1.03);
         }
 
         /* Animation utilities */
@@ -179,6 +189,11 @@
 </head>
 <body class="selection:bg-brand-500 selection:text-white">
 
+<!-- Skip to Main Content Link (WCAG 2.4.1) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:shadow-2xl focus:font-semibold focus:text-xs focus:uppercase focus:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to Main Content
+</a>
+
 <!-- Fixed Top Navbar -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
     <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
@@ -192,7 +207,7 @@
                     <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
                         Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
                     </span>
-                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                    <span class="text-xs text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
                 </div>
             </a>
 
@@ -200,14 +215,14 @@
             <nav class="hidden md:flex items-center gap-8 lg:gap-10 xl:gap-12">
                 <a href="index.html" class="text-sm font-medium text-brand-400">Home</a>
                 
-                <!-- Products Dropdown -->
+                <!-- Products Dropdown (Keyboard & Screen Reader Accessible) -->
                 <div class="relative group py-2">
-                    <a href="products.html" class="text-sm font-medium text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors">
+                    <a href="products.html" class="text-sm font-medium text-gray-300 hover:text-white flex items-center gap-1.5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-400 focus-visible:rounded" aria-haspopup="true" aria-expanded="false">
                         Products & Solutions
-                        <svg class="w-4 h-4 text-gray-400 group-hover:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        <svg class="w-4 h-4 text-gray-400 group-hover:rotate-180 group-focus-within:rotate-180 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </a>
                     <!-- Dropdown Menu -->
-                    <div class="absolute top-full left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 pointer-events-none group-hover:pointer-events-auto">
+                    <div class="absolute top-full left-0 w-72 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 transform translate-y-1 group-hover:translate-y-0 group-focus-within:translate-y-0 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto">
                         <div class="glass-card rounded-xl p-2 shadow-2xl border border-dark-border bg-dark-card/95 backdrop-blur-xl">
                             <a href="products.html?category=welded-mesh-fencing" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-medium text-gray-300 hover:text-white hover:bg-dark-surface transition-colors">
                                 <span class="w-2 h-2 rounded-full bg-brand-400"></span>
@@ -255,7 +270,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
                 <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -281,7 +296,7 @@
     </div>
 </header>
 
-<main>
+<main id="main-content">
     <!-- Betafence-Inspired 3-Item Hero Banner (Optimized for Desktop Flex & Mobile Touch Stack) -->
     <section class="relative pt-20 h-screen min-h-[720px] max-h-[1080px] bg-dark-base overflow-hidden border-b border-dark-border">
         <div class="hero-panel-group h-full flex flex-col md:flex-row divide-y md:divide-y-0 md:divide-x divide-dark-border/60">
@@ -364,15 +379,91 @@
         </div>
     </section>
 
-    <!-- Client & Partner Trust Marquee (Light Clean Section with Free-Floating Enlarged Logos) -->
-    <section class="py-12 sm:py-14 bg-slate-100 border-b border-slate-300 overflow-hidden">
+        <!-- Enterprise Impact Telemetry HUD (Sharp, Tactile, Precision Metrics) -->
+    <section class="border-b border-dark-border bg-[#0d131f]/95 backdrop-blur-md relative overflow-hidden" id="impact-metrics" aria-label="Enterprise Deployment Scale Metrics">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-dark-border/80 border-x border-dark-border/80">
+                
+                <!-- Cell 01: Perimeter Scale -->
+                <div class="p-4 sm:p-5 lg:p-6 hover:bg-white/[0.02] transition-colors relative group">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-brand-400 shadow-[0_0_6px_#22c55e]"></span>
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-semibold">SYS.01 // PERIMETER</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-brand-400 font-bold hidden sm:inline">LIVE</span>
+                    </div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-white tracking-tight metric-counter" data-target="500" data-suffix="+">500+</span>
+                        <span class="text-xs sm:text-sm font-bold font-mono text-brand-400 tracking-wider">KM</span>
+                    </div>
+                    <div class="text-xs font-semibold text-gray-200 mt-2 uppercase tracking-wide">Perimeter Security Deployed</div>
+                    <div class="text-[11px] font-mono text-gray-400 mt-0.5">358 high-security & anti-cut mesh</div>
+                </div>
+
+                <!-- Cell 02: Structural Steel Fabrication -->
+                <div class="p-4 sm:p-5 lg:p-6 hover:bg-white/[0.02] transition-colors relative group">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_6px_#22d3ee]"></span>
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-semibold">VOL.02 // STEEL_FAB</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-cyan-400 font-bold hidden sm:inline">HEAVY</span>
+                    </div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-white tracking-tight metric-counter" data-target="15000" data-suffix="+" data-format="comma">15,000+</span>
+                        <span class="text-xs sm:text-sm font-bold font-mono text-cyan-400 tracking-wider">MT</span>
+                    </div>
+                    <div class="text-xs font-semibold text-gray-200 mt-2 uppercase tracking-wide">Structural Steel Fabricated</div>
+                    <div class="text-[11px] font-mono text-gray-400 mt-0.5">PEB sheds & crane portal gantries</div>
+                </div>
+
+                <!-- Cell 03: Pan-India Turnkey Reach -->
+                <div class="p-4 sm:p-5 lg:p-6 hover:bg-white/[0.02] transition-colors relative group">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399]"></span>
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-semibold">GEO.03 // TURNKEY</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-emerald-400 font-bold hidden sm:inline">NATIONAL</span>
+                    </div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-mono text-white tracking-tight metric-counter" data-target="12" data-suffix="+">12+</span>
+                        <span class="text-xs sm:text-sm font-bold font-mono text-emerald-400 tracking-wider">STATES</span>
+                    </div>
+                    <div class="text-xs font-semibold text-gray-200 mt-2 uppercase tracking-wide">Turnkey Supply & Erection</div>
+                    <div class="text-[11px] font-mono text-gray-400 mt-0.5">Hydraulic cranes & civil deployment</div>
+                </div>
+
+                <!-- Cell 04: Quality Standards Matrix -->
+                <div class="p-4 sm:p-5 lg:p-6 hover:bg-white/[0.02] transition-colors relative group">
+                    <div class="flex items-center justify-between gap-2 mb-2">
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-amber-400 shadow-[0_0_6px_#fbbf24]"></span>
+                            <span class="text-[10px] font-mono uppercase tracking-widest text-gray-400 font-semibold">STD.04 // COMPLIANCE</span>
+                        </div>
+                        <span class="text-[10px] font-mono text-amber-400 font-bold hidden sm:inline">ASSURED</span>
+                    </div>
+                    <div class="flex items-baseline gap-1 mt-1">
+                        <span class="text-xl sm:text-2xl lg:text-3xl font-extrabold font-mono text-white tracking-tight">ASTM & IEC</span>
+                    </div>
+                    <div class="text-xs font-semibold text-gray-200 mt-2 uppercase tracking-wide">Certified Quality Benchmarks</div>
+                    <div class="text-[11px] font-mono text-gray-400 mt-0.5">ASTM F2656, IEC 60335, IS 2062</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Client & Partner Trust Marquee (Cohesive Deep Slate Glass Band) -->
+    <section class="py-12 sm:py-14 bg-dark-card/75 backdrop-blur-xl border-b border-dark-border overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                    <span class="text-[11px] font-mono uppercase tracking-widest text-brand-700 font-bold block">Proven Enterprise Deployments</span>
-                    <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Trusted by Tier-1 Enterprises & Hyperscalers</h3>
+                    <span class="text-[11px] font-mono uppercase tracking-widest text-brand-400 font-semibold block">Proven Enterprise Deployments</span>
+                    <h3 class="text-xl sm:text-2xl font-black text-white tracking-tight">Trusted by Tier-1 Enterprises & Hyperscalers</h3>
                 </div>
-                <span class="text-xs font-medium text-slate-500">Delivering mission-critical physical boundaries across India</span>
+                <span class="text-xs font-medium text-gray-400">Delivering mission-critical physical boundaries across India</span>
             </div>
         </div>
         
@@ -380,32 +471,32 @@
         <div class="hidden md:block relative w-full overflow-hidden">
             <div class="marquee-track-forward gap-14 lg:gap-16 items-center">
                 <!-- Group 1 -->
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
 
                 <!-- Duplicate for Loop -->
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
-                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
+                <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-12 lg:h-14 w-auto max-w-[170px]" loading="lazy" decoding="async" width="140" height="48"></div>
             </div>
         </div>
 
@@ -414,40 +505,40 @@
             <!-- Row 1: Forward Direction (Logos 1 to 6) -->
             <div class="relative w-full overflow-hidden">
                 <div class="marquee-track-forward gap-8 items-center">
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
                     
                     <!-- Loop Duplicate -->
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Client 1" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Client 2" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="Client 3" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="Client 4" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Client 5" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Client 6" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_01.webp" alt="Amazon logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_02.webp" alt="Tata Projects logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_03.webp" alt="L&T Construction logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_04.webp" alt="GMR Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_05.webp" alt="Adani Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_06.webp" alt="Reliance Industries logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
                 </div>
             </div>
 
             <!-- Row 2: Reverse Direction (Logos 7 to 12) -->
             <div class="relative w-full overflow-hidden">
                 <div class="marquee-track-reverse gap-8 items-center">
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
                     
                     <!-- Loop Duplicate -->
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Client 7" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Client 8" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="Client 9" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="Client 10" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Client 11" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
-                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Client 12" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_07.webp" alt="Sattva Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_08.webp" alt="Aparna Constructions logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_09.webp" alt="My Home Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_10.webp" alt="NCC Limited logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_11.webp" alt="Prestige Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
+                    <div class="marquee-logo-item"><img src="assets/images/client_logo_12.webp" alt="Brigade Group logo" class="h-10 w-auto max-w-[130px]" loading="lazy" decoding="async" width="130" height="40"></div>
                 </div>
             </div>
         </div>
@@ -476,11 +567,11 @@
         </div>
 
         <!-- Horizontal Scrollable Container -->
-        <div class="w-full overflow-x-auto no-scrollbar pl-4 sm:pl-6 lg:pl-[max(1rem,calc((100vw-80rem)/2+2rem))] pr-6 pb-6" id="solutions-track">
+        <div class="w-full overflow-x-auto no-scrollbar pl-4 sm:pl-6 lg:pl-[max(1rem,calc((100vw-80rem)/2+2rem))] pr-6 pb-6" id="solutions-track" class="w-full overflow-x-auto no-scrollbar pl-4 sm:pl-6 lg:pl-[max(1rem,calc((100vw-80rem)/2+2rem))] pr-6 pb-6 cursor-grab active:cursor-grabbing" role="region" aria-roledescription="carousel" aria-label="Engineered Physical Security Solutions Carousel">
             <div class="flex gap-6 w-max">
                 
                 <!-- Solution Card 1: 358 Anti-Climb -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="1 of 7: 358 Anti-Climb Mesh">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/anti_climb_358_installed.webp" alt="358 Anti Climb High Security" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-emerald-400">
@@ -496,7 +587,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">76.2 x 12.7 mm Aperture</span>
-                            <a href="product-detail.html?id=anti-climb-358-fence" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=anti-climb-358-fence" aria-label="View 358 Anti-Climb Mesh solution details" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -504,7 +595,7 @@
                 </div>
 
                 <!-- Solution Card 2: BRC Bell Post / UNICO Prima -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="2 of 7: BRC / UNICO Prima Fence">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/brc_bell_post_fence_installed.webp" alt="BRC Bell Post Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-brand-400">
@@ -520,7 +611,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">Zero Onsite Welding</span>
-                            <a href="product-detail.html?id=brc-bell-post-fence" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=brc-bell-post-fence" aria-label="View BRC UNICO Prima Weldmesh solution details" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -528,7 +619,7 @@
                 </div>
 
                 <!-- Solution Card 3: Structural Steel Fabrication & Erection -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="3 of 7: Structural Steel Works">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/structural_steel_fabrication_1.webp" alt="Structural Steel Fabrication & Erection" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-cyan-400">
@@ -544,7 +635,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">Turnkey Erection</span>
-                            <a href="product-detail.html?id=structural-steel-fabrication-erection" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=structural-steel-fabrication-erection" aria-label="View Structural Steel Works solution details" class="text-xs font-mono font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -552,7 +643,7 @@
                 </div>
 
                 <!-- Solution Card 4: Precast Concrete Jersey Barriers -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="4 of 7: Precast Concrete Jersey Barriers">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/precast_jersey_barriers_stack.webp" alt="Precast Concrete Jersey Barriers" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-amber-400">
@@ -568,7 +659,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">Rapid Crane Setup</span>
-                            <a href="product-detail.html?id=precast-jersey-barriers" class="text-xs font-mono font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=precast-jersey-barriers" aria-label="View Precast Jersey Barriers solution details" class="text-xs font-mono font-semibold text-amber-400 hover:text-amber-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -576,7 +667,7 @@
                 </div>
 
                 <!-- Solution Card 5: K-4 Crash Rated Anti-Ram Fence -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="5 of 7: K-4 Crash-Rated Barrier">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/k4_rated_high_security_fence.webp" alt="K-4 Crash Rated Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-red-400">
@@ -592,7 +683,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">ASTM F2656 Certified</span>
-                            <a href="product-detail.html?id=k4-crash-rated-fence" class="text-xs font-mono font-semibold text-red-400 hover:text-red-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=k4-crash-rated-fence" aria-label="View K-4 Crash Rated Anti-Ram Barrier solution details" class="text-xs font-mono font-semibold text-red-400 hover:text-red-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -600,7 +691,7 @@
                 </div>
 
                 <!-- Solution Card 6: Industrial Gates & Centurion Automation -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="6 of 7: Automated Gates and Motors">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/sliding_automated_gate.webp" alt="Industrial Automated Sliding Gate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-blue-400">
@@ -616,7 +707,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">D5-Evo Heavy Drive</span>
-                            <a href="product-detail.html?id=industrial-gates-and-automation" class="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=industrial-gates-and-automation" aria-label="View Industrial Automated Gates and CENTURION Motors solution details" class="text-xs font-mono font-semibold text-blue-400 hover:text-blue-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -624,7 +715,7 @@
                 </div>
 
                 <!-- Solution Card 7: Active Electric Security Fence -->
-                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300">
+                <div class="w-[320px] sm:w-[360px] glass-card rounded-2xl overflow-hidden flex flex-col group transition-all duration-300" role="group" aria-roledescription="slide" aria-label="7 of 7: Active Electric Security Fence">
                     <div class="relative h-56 overflow-hidden">
                         <img src="assets/images/electric_perimeter_fence.webp" alt="Active Electric Security Fence" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" width="360" height="224">
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono uppercase tracking-wider bg-dark-base/80 border border-white/10 text-yellow-400">
@@ -640,7 +731,7 @@
                         </div>
                         <div class="mt-6 pt-4 border-t border-dark-border flex items-center justify-between">
                             <span class="text-[11px] font-mono text-gray-400">Multi-Zone Alarms</span>
-                            <a href="product-detail.html?id=industrial-electric-fence" class="text-xs font-mono font-semibold text-yellow-400 hover:text-yellow-300 flex items-center gap-1">
+                            <a href="product-detail.html?id=industrial-electric-fence" aria-label="View Active Electric Security Fence solution details" class="text-xs font-mono font-semibold text-yellow-400 hover:text-yellow-300 flex items-center gap-1">
                                 View Solution →
                             </a>
                         </div>
@@ -870,23 +961,23 @@
                 <form id="rfq-form" class="space-y-6">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Full Name *</label>
-                            <input type="text" id="rfq-name" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Ramesh Kumar">
+                            <label for="rfq-name" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Full Name <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="rfq-name" name="name" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Ramesh Kumar">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Company / Enterprise *</label>
-                            <input type="text" id="rfq-company" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Tata Projects / STT Data Centers">
+                            <label for="rfq-company" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Company / Enterprise <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="rfq-company" name="company" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. Tata Projects / STT Data Centers">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Work Email *</label>
-                            <input type="email" id="rfq-email" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="ramesh@company.com">
+                            <label for="rfq-email" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Work Email <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="email" id="rfq-email" name="email" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="ramesh@company.com">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Phone / WhatsApp *</label>
-                            <input type="tel" id="rfq-phone" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="+91 98765 43210">
+                            <label for="rfq-phone" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Phone / WhatsApp <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="tel" id="rfq-phone" name="phone" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="+91 98765 43210">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Product / Solution Required</label>
+                            <label for="rfq-product" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Product / Solution Required</label>
                             <select id="rfq-product" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors">
                                 <option value="">Select requirement...</option>
                                 <option value="358 Anti-Climb High Security Mesh">358 Anti-Climb High Security Mesh</option>
@@ -901,13 +992,13 @@
                             </select>
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Approx. Perimeter / Scope (Meters / Tonnage)</label>
+                            <label for="rfq-scope" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Approx. Perimeter / Scope (Meters / Tonnage)</label>
                             <input type="text" id="rfq-scope" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors" placeholder="e.g. 750 Running Meters / 50 MT Steel">
                         </div>
                     </div>
 
                     <div>
-                        <label class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Project Notes & Site Requirements</label>
+                        <label for="rfq-message" class="block text-xs font-mono uppercase tracking-wider text-gray-300 mb-2">Project Notes & Site Requirements</label>
                         <textarea id="rfq-message" rows="3" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-brand-500 focus:ring-1 focus:ring-brand-500 outline-none transition-colors resize-none" placeholder="Provide details such as project location, fence height, timeline, or drawing attachments..."></textarea>
                     </div>
 
@@ -1122,7 +1213,37 @@ if (track && prevBtn && nextBtn) {
         animFrameId = requestAnimationFrame(stepSolutionsAutoScroll);
     }
 
-    if ('IntersectionObserver' in window) {
+    // Desktop Drag-to-Scroll support
+    let isMouseDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    track.addEventListener('mousedown', (e) => {
+        isMouseDown = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollStart = track.scrollLeft;
+        isUserInteracting = true;
+        pauseAutoScroll(4000);
+    });
+
+    window.addEventListener('mouseup', () => {
+        if (isMouseDown) {
+            isMouseDown = false;
+            pauseAutoScroll(3000);
+        }
+    });
+
+    track.addEventListener('mousemove', (e) => {
+        if (!isMouseDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.5;
+        track.scrollLeft = scrollStart - walk;
+        virtualScrollLeft = track.scrollLeft;
+    });
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion && 'IntersectionObserver' in window) {
         const carouselObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 isCarouselInView = entry.isIntersecting;
@@ -1136,7 +1257,7 @@ if (track && prevBtn && nextBtn) {
             });
         }, { threshold: 0.05 });
         carouselObserver.observe(track);
-    } else {
+    } else if (!prefersReducedMotion) {
         isCarouselInView = true;
         animFrameId = requestAnimationFrame(stepSolutionsAutoScroll);
     }
@@ -1203,6 +1324,86 @@ function submitEmailRFQ() {
 
     window.location.href = `mailto:info@jhanvienterprises.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
+
+// Enterprise Impact Metric Counter Animation (Precision Roll-Up)
+function initMetricCounters() {
+    const counters = document.querySelectorAll('.metric-counter');
+    if (!counters.length) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    const runCountAnimation = (el) => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const useComma = el.getAttribute('data-format') === 'comma';
+
+        if (prefersReducedMotion || isNaN(target)) {
+            el.textContent = (useComma ? target.toLocaleString('en-IN') : target) + suffix;
+            return;
+        }
+
+        // Reset to 0 before rolling
+        el.textContent = '0' + suffix;
+
+        const duration = 1800; // 1.8s
+        const startTime = performance.now();
+
+        function updateCount(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // smooth exponential deceleration
+            const ease = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+            const currentVal = Math.floor(ease * target);
+
+            const formattedVal = useComma ? currentVal.toLocaleString('en-IN') : currentVal;
+            el.textContent = formattedVal + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCount);
+            } else {
+                el.textContent = (useComma ? target.toLocaleString('en-IN') : target) + suffix;
+            }
+        }
+
+        requestAnimationFrame(updateCount);
+    };
+
+    let hasAnimated = false;
+    const triggerCounters = () => {
+        if (hasAnimated) return;
+        hasAnimated = true;
+        counters.forEach(c => runCountAnimation(c));
+    };
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    triggerCounters();
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const ribbon = document.getElementById('impact-metrics');
+        if (ribbon) {
+            observer.observe(ribbon);
+        } else {
+            triggerCounters();
+        }
+    } else {
+        triggerCounters();
+    }
+}
+
+// Initialize on DOM load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMetricCounters);
+} else {
+    initMetricCounters();
+}
+
 </script>
 </body>
 </html>

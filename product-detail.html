@@ -47,6 +47,11 @@
 </head>
 <body class="selection:bg-brand-500 selection:text-white">
 
+<!-- Skip to Main Content Link (WCAG 2.4.1) -->
+<a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2.5 focus:bg-brand-600 focus:text-white focus:rounded-lg focus:shadow-2xl focus:font-semibold focus:text-xs focus:uppercase focus:tracking-wider focus:outline-none focus:ring-2 focus:ring-white">
+    Skip to Main Content
+</a>
+
 <!-- Fixed Top Navbar -->
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
     <div class="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
@@ -60,7 +65,7 @@
                     <span class="text-base sm:text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
                         Jhanvi <span class="text-brand-400 font-semibold">Enterprises</span>
                     </span>
-                    <span class="text-[10px] text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
+                    <span class="text-xs text-gray-400 font-mono tracking-wider uppercase hidden sm:block">Perimeter Security & Steel</span>
                 </div>
             </a>
 
@@ -84,7 +89,7 @@
             </div>
 
             <!-- Mobile menu button -->
-            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation">
+            <button id="mobile-toggle" class="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-dark-card border border-dark-border" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
                 <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
@@ -124,7 +129,7 @@
                 <!-- Image Showcase -->
                 <div class="lg:col-span-6 space-y-4">
                     <div class="relative rounded-2xl overflow-hidden border border-dark-border glass-card bg-dark-surface aspect-[4/3]">
-                        <img id="main-product-img" src="" alt="" class="w-full h-full object-cover" fetchpriority="high" decoding="async" width="800" height="500">
+                        <img id="main-product-img" src="" alt="Product technical engineering view" class="w-full h-full object-cover" fetchpriority="high" decoding="async" width="800" height="500">
                         <div class="absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-mono uppercase tracking-wider bg-dark-base/85 border border-white/10 text-brand-400" id="product-badge">
                             Engineering Grade
                         </div>
@@ -156,6 +161,18 @@
                         <a id="direct-wa-btn" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl text-xs font-semibold uppercase tracking-wider bg-dark-surface hover:bg-dark-border border border-dark-border text-white transition-all">
                             <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                             Direct WhatsApp Chat
+                        </a>
+                    </div>
+
+                    <!-- Technical Document & CAD Triggers -->
+                    <div class="flex flex-wrap items-center gap-3 pt-6 mt-6 border-t border-dark-border/80">
+                        <a href="assets/docs/Where%20Quality%20Meets%20Security,%20We%20Fence.%20Jhanvi%20Enterprises%20(Profile)-1.pdf" download="Jhanvi_Enterprises_Technical_Profile.pdf" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-mono font-medium text-gray-300 hover:text-white bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-brand-500/40 transition-colors">
+                            <svg class="w-4 h-4 text-brand-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                            <span>Download Full TDS (.PDF)</span>
+                        </a>
+                        <a href="#rfq-section" onclick="requestCadDrawing()" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-mono font-medium text-gray-300 hover:text-white bg-dark-card hover:bg-dark-surface border border-dark-border hover:border-blue-500/40 transition-colors">
+                            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            <span>Request 2D CAD Drawings (.DWG)</span>
                         </a>
                     </div>
                 </div>
@@ -215,29 +232,29 @@
                 <form id="product-rfq-form" class="space-y-5">
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                         <div>
-                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Full Name *</label>
-                            <input type="text" id="p-name" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Your Name">
+                            <label for="p-name" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Full Name <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="p-name" name="name" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Your Name">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Company / Enterprise *</label>
-                            <input type="text" id="p-company" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Company Name">
+                            <label for="p-company" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Company / Enterprise <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="text" id="p-company" name="company" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="Company Name">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Work Email *</label>
-                            <input type="email" id="p-email" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="email@company.com">
+                            <label for="p-email" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Work Email <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="email" id="p-email" name="email" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="email@company.com">
                         </div>
                         <div>
-                            <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Phone / WhatsApp *</label>
-                            <input type="tel" id="p-phone" required class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="+91 XXXXX XXXXX">
+                            <label for="p-phone" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Phone / WhatsApp <span class="text-brand-400" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+                            <input type="tel" id="p-phone" name="phone" required aria-required="true" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="+91 XXXXX XXXXX">
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Perimeter Length / Metric Quantity (Meters / Tonnage)</label>
-                        <input type="text" id="p-quantity" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="e.g. 500 Meters / 20 Tons">
+                        <label for="p-quantity" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Perimeter Length / Metric Quantity (Meters / Tonnage)</label>
+                        <input type="text" id="p-quantity" name="quantity" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none" placeholder="e.g. 500 Meters / 20 Tons">
                     </div>
                     <div>
-                        <label class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Specific Requirements & Site Conditions</label>
-                        <textarea id="p-message" rows="3" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none resize-none" placeholder="Site location, desired height, drawing status..."></textarea>
+                        <label for="p-message" class="block text-xs font-mono uppercase text-gray-300 mb-1.5">Specific Requirements & Site Conditions</label>
+                        <textarea id="p-message" name="message" rows="3" class="w-full bg-dark-base border border-dark-border rounded-xl px-4 py-3 text-xs text-white placeholder-gray-500 focus:border-brand-500 outline-none resize-none" placeholder="Site location, desired height, drawing status..."></textarea>
                     </div>
 
                     <div class="flex flex-col sm:flex-row gap-4 pt-2">
@@ -270,9 +287,11 @@ const hamburgerIcon = document.getElementById('hamburger-icon');
 const closeIcon = document.getElementById('close-icon');
 
 mobileBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
     mobileMenu.classList.toggle('hidden');
     hamburgerIcon.classList.toggle('hidden');
     closeIcon.classList.toggle('hidden');
+    mobileBtn.setAttribute('aria-expanded', isHidden ? 'true' : 'false');
 });
 
 // Load Product Detail
@@ -422,6 +441,14 @@ function submitProductEmail() {
     const body = `Dear Jhanvi Enterprises,\n\nWe would like to request technical specifications and quote for ${currentProduct.name}.\n\nDetails:\n- Name: ${name}\n- Company: ${company}\n- Email: ${email}\n- Phone: ${phone}\n- Quantity/Perimeter: ${quantity || 'TBD'}\n- Project Details: ${message || 'N/A'}\n\nBest regards,\n${name}`;
 
     window.location.href = `mailto:info@jhanvienterprises.co.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function requestCadDrawing() {
+    const msgInput = document.getElementById('p-message');
+    if (msgInput) {
+        msgInput.value = 'Please provide 2D CAD elevation (.DWG) and engineering installation drawings for this product specification.';
+        msgInput.focus();
+    }
 }
 
 loadProduct();
