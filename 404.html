@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Specification Not Found | Jhanvi Enterprises</title>
+    <meta name="description" content="The requested engineering page or specification document could not be located.">
+    <link rel="icon" type="image/png" href="assets/images/logo2.png">
+    <link rel="apple-touch-icon" href="assets/images/logo2.png">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
+    <style>
+        html, body {
+            background-color: #0B0F17;
+            color: #F3F4F6;
+            font-family: 'Inter', sans-serif;
+        }
+        .cyber-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-card {
+            background: rgba(17, 23, 38, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between cyber-grid">
+
+    <!-- Header -->
+    <header class="py-6 border-b border-dark-border bg-dark-base/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/images/logo2.png" alt="Jhanvi Enterprises Logo" class="h-9 w-auto">
+                <span class="text-lg font-bold text-white tracking-tight">Jhanvi <span class="text-brand-400">Enterprises</span></span>
+            </a>
+            <a href="index.html" class="text-xs font-mono font-semibold text-brand-400 hover:text-brand-300">
+                ← Return to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- 404 Main Message -->
+    <main id="main-content" class="flex-1 flex items-center justify-center py-20 px-4">
+        <div class="max-w-lg w-full text-center glass-card rounded-2xl p-8 sm:p-12 border border-brand-500/20">
+            <span class="px-3 py-1 rounded-full text-xs font-mono uppercase tracking-widest bg-brand-500/10 text-brand-400 border border-brand-500/30">
+                HTTP 404 // ROUTE_NOT_FOUND
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-black text-white tracking-tight mt-6">
+                Specification Not Located
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-400 mt-3 leading-relaxed">
+                The technical specification, drawing file, or system page you requested does not exist or has been relocated within our catalog.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+                <a href="products.html" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-semibold uppercase tracking-wider transition-all">
+                    Browse All 8 Systems
+                </a>
+                <a href="contact.html" class="px-6 py-3 rounded-xl bg-dark-surface hover:bg-dark-border border border-dark-border text-gray-200 text-xs font-semibold uppercase tracking-wider transition-all">
+                    Contact Engineering Desk
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 border-t border-dark-border text-center text-xs text-gray-500">
+        <p>&copy; 2026 Jhanvi Enterprises. All rights reserved. | Hyderabad, India</p>
+    </footer>
+
+</body>
+</html>
